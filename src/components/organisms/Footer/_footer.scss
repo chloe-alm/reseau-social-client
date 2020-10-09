@@ -1,0 +1,14 @@
+@import '../../../scssConfig/mixin';
+
+footer{
+    
+    height: 10vh;
+    display: none;
+
+    p {
+        color:black;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 1%;
+    }
+}

@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $color-background-white;
+    color: $color-text;
+    font-family: 'Avenir' ,-apple-system, 'Roboto', 'Helvetica Neue',
+      sans-serif;
+      @font-face {
+        font-family: 'Avenir';
+        font-weight: 12px;
+        src: url(../assets/font/BAHNSCHRIFT1.TTF);
+      }
+  }

@@ -1,0 +1,50 @@
+.navBar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_logo {
+    margin-left: 2%;
+    width: 17%;
+    height: 4rem;
+  }
+  &_boutons {
+    width: 100%;
+
+    background-color: #4a9e87;
+
+    display: flex;
+    justify-content: space-around;
+
+    &_boutonregister {
+      color: black;
+      width: 25%;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+      float: left;
+      background: white;
+
+      &:hover {
+        background-color: #4a9e87;
+        cursor: pointer;
+      }
+    }
+    &_boutonlogin {
+      background-color: #4a9e87;
+      color: white;
+      width: 25%;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+      float: left;
+      background: #ffffff;
+
+      &:hover {
+        background-color: #4a9e87;
+        cursor: pointer;
+      }
+    }
+  }
+}
