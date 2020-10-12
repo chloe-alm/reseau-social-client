@@ -5,10 +5,12 @@ import "./App.scss";
 import NavBar from "./components/molecules/NavBar";
 import Home from "./components/pages/Home/home";
 import Login from "./components/pages/Login/login";
-import { Profil } from "./components/pages/Profil/profil";
+import { Profil }from "./components/pages/Profil/profil";
 import Register from "./components/pages/Register/register";
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
+import OnePost from "./components/pages/OnePost/onePost";
+import ListPost from "./components/pages/ListPosts/listPosts";
 
 function App() {
   const initialState = {
@@ -50,12 +52,13 @@ function App() {
 
         {/* <Header /> */}
         <Switch>
-          {/* <Route path="/posts">
-          <CreatePost />
-        </Route>
-          <Route path="/posts/:id">
-            <Posts />
-          </Route> */}
+          <Route exact path="/Onepost">
+            <OnePost/>
+          </Route>
+          <Route exact path="/Listposts">
+            <ListPost/>
+          </Route>
+
           <Route exact path="/">
             <Home />
           </Route>

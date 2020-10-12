@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect,useHistory } from "react-router-dom";
+
 
 // import cheval from "../../../assets/images/cheval.png";
 import randonne from "../../../assets/images/randonne.png";
@@ -10,6 +11,7 @@ require("./_login.scss");
 
 export default function Login(props) {
   const [login, setLogin] = useState({ email: "", password: "" });
+  // const history = useHistory
   const [redirect, setRedirect] = useState(false);
 
   const [errorForm, setErrorForm] = useState(" ");
@@ -26,6 +28,7 @@ export default function Login(props) {
       url: "http://localhost:8001/api/login",
       data: JSON.stringify(login),
     })
+    
       // .post('http://localhost:8001/api/login', login)
       .then((res) => {
         console.log("#888", res);
@@ -44,7 +47,8 @@ export default function Login(props) {
       });
   };
   if (redirect) {
-    return <Redirect to="profil" />;
+    return <Redirect to="/profil" />;
+    // history.push('/')
   } else {
     return (
       <div className="ContainerLog media_phone">

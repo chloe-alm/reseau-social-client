@@ -51,7 +51,7 @@ const handleSubmit = (e) => {
       <img src={prairiecheval} alt="prairie avec un cheval"/>
       </div>
       </div>
-    <div className="ContainerReg_from">
+    <form methode="post"className="ContainerReg_from">
     <div className="ContainerReg_form_group">
         <label htmlFor="firstName">Nom</label>
         <input type="text" name="firstName"id="firstName" value={register.firstName} onChange={handleChange} required/>
@@ -81,7 +81,7 @@ const handleSubmit = (e) => {
         <input type="text" name="picture" id="picture"  value={register.picture} onChange={handleChange} required />
       </div>
     </div>
-  </div>
+  </form>
     <div className="ContainerReg_from_bouton">
       <button type="button"className="btn" onClick={handleSubmit}>S'inscrire</button>
     </div>
