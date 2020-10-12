@@ -1,29 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PlaceCard({ place }) {
-  
+export default function PostCard({ post }) {
   return (
-    <div className="placeCard">
-      <Link className="placeCard-link" to={`/hebergements/${place.id}`}>
-        <div className="placeCard-link-image">
+    <div className="postCard" key={post.id}>
+      <Link className="postCard-link" to={"./"}>
+        <div className="postCard-link-image">
           <img
-            className="placeCard-link-image-place"
-            src="https://kenleephotography.files.wordpress.com/2015/09/7169kenlee-2015_arizona-30sf32iso640-toweringsaguarosstartrails-66andahalfmintotal-133layerstotal-1000px.jpg"
+            className="postCard-link-image-place"
+            src={`${post.picture}`}
             alt="aperçu du lieu"
           />
         </div>
-
-        <div className="placeCard-link-infos">
-          <p className="placeCard-link-infos-type" key={place.id}>
-            Type de lieu: {place.type} <br /> <br />
-            {place.description}
-          </p>
-          <p className="placeCard-link-infos-details">
-            • {place.personMax} personne(s) max
-            <br /> • Animaux: {place.animaux}
-            <br />• {place.location}
-          </p>
+        <div className="postCard-link-infos">
+          <p className="postCard-link-infos-content">Content: {post.content}</p>
+          <p className="postCard-link-infos-like">• {post.like} like</p>
         </div>
       </Link>
     </div>

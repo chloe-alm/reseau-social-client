@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
-import NavBar from "./components/molecules/NavBar";
 import Home from "./components/pages/Home/home";
 import Login from "./components/pages/Login/login";
 import { Profil }from "./components/pages/Profil/profil";
@@ -39,6 +38,7 @@ function App() {
 
     fetchUser();
   }, []);
+  
   return (
     <AuthContext.Provider
       value={{
@@ -48,28 +48,26 @@ function App() {
     >
       <h1>Centre équestre de jablines</h1>
       <Router>
-        <NavBar />
 
         {/* <Header /> */}
         <Switch>
-          <Route exact path="/Onepost">
+          {/* <Route exact path="/Onepost">
             <OnePost/>
-          </Route>
-          <Route exact path="/Listposts">
+          </Route> */}
+          <Route exact path="/posts">
             <ListPost/>
           </Route>
-
-          <Route exact path="/">
-            <Home />
-          </Route>
+          {/* <Route exact path="/profil">
+            <Profil />
+          </Route> */}
           <Route exact path="/login">
             <Login />
           </Route>
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/profil">
-            <Profil />
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
