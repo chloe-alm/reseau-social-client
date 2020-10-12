@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/pages/Home/home";
 import Login from "./components/pages/Login/login";
-import { Profil }from "./components/pages/Profil/profil";
+import { Profil } from "./components/pages/Profil/profil";
 import Register from "./components/pages/Register/register";
-import { AuthContext } from "./context/auth";
-import reducer from "./context/reducer";
 import OnePost from "./components/pages/OnePost/onePost";
 import ListPost from "./components/pages/ListPosts/listPosts";
+
+import { AuthContext } from "./context/auth";
+import reducer from "./context/reducer";
 
 function App() {
   const initialState = {
@@ -18,27 +19,28 @@ function App() {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem("token");
       if (token) {
-        const user = await axios.get("http://localhost:8001/api/user/me", {
+        const result = await axios.get("http://localhost:8001/api/user/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        if (user.status === 200) {
+        if (result.status === 200) {
+          console.log("dispatch app.js ==>", result.data);
           dispatch({
             type: "LOAD_USER",
-            payload: user,
+            payload: result.data,
           });
         }
       }
     };
-
     fetchUser();
   }, []);
-  
+
   return (
     <AuthContext.Provider
       value={{
@@ -48,14 +50,13 @@ function App() {
     >
       <h1>Centre équestre de jablines</h1>
       <Router>
-
         {/* <Header /> */}
         <Switch>
           {/* <Route exact path="/Onepost">
             <OnePost/>
           </Route> */}
           <Route exact path="/posts">
-            <ListPost/>
+            <ListPost />
           </Route>
           {/* <Route exact path="/profil">
             <Profil />

@@ -10,39 +10,30 @@ export default function Listposts(props) {
   const [list, setList] = useState([]);
   const [errorForm, setErrorForm] = useState(" ");
 
-  // const handlePost = async (event) => {
-  //     event.preventDefault();
-  //     const token = localStorage.getItem('token');
-  //     await Axios({
-  //         method: 'get',
-  //         headers: {
-  //             'Content-Type': 'application/json',
-  //             authorization: `Bearer ${token}`,
-  //         },
-  //         url: 'http://localhost:8001/api/user/me'
-  //     })
-  //         .then(res=> {
-  //             localStorage.setItem('usertoken', res.data)
-  //             console.log('tutu', res.data)
-  //             return res.data
+  const token = localStorage.getItem("token");
 
-  //         });
-  // };
-    useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const result = await Axios.get("http://localhost:8001/api/posts");
-      console.log("result.data", result);
-      if (result.data) {
-        setList(result.data.post);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await Axios({
+          method: "get",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          url: "http://localhost:8001/api/posts",
+        });
+        console.log("result.data", result);
+        if (result.data) {
+          setList(result.data.post);
+        }
+      } catch (error) {
+        setErrorForm(error);
       }
-    } catch (error) {
-      setErrorForm(error);
-    }
-  };
-  console.log("la liste", list);
-  fetchData();
-    }, []);
+    };
+    console.log("la liste", list);
+    fetchData();
+  }, []);
 
   return (
     <>
