@@ -3,14 +3,16 @@ import Axios from "axios";
 // import { Link, Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import PostCard from "../../molecules/postCard";
+import imagecentre from "../../../assets/images/centre.png";
+import { Link } from "react-router-dom";
 
 require("./_listPosts.scss");
 
 export default function Listposts(props) {
+  const token = localStorage.getItem("token");
+
   const [list, setList] = useState([]);
   const [errorForm, setErrorForm] = useState(" ");
-
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +25,6 @@ export default function Listposts(props) {
           },
           url: "http://localhost:8001/api/posts",
         });
-        console.log("result.data", result);
         if (result.data) {
           setList(result.data.post);
         }
@@ -31,18 +32,22 @@ export default function Listposts(props) {
         setErrorForm(error);
       }
     };
-    console.log("la liste", list);
     fetchData();
-  }, []);
+  }, [token]);
 
   return (
-    <>
-      <div className="containerList">
-        <div>{errorForm}</div>
+    <div className="containerList">
+      <div>{errorForm}</div>
+      <p>Les Posts</p>
+      <div className="containerList_card">
         {list.map((post) => {
-          return <PostCard post={post} key={post.id} />;
+          return (
+            <Link className="containerList_link" to={`/posts/${post.id}`}>
+              <PostCard post={post} key={post.id} />
+            </Link>
+          );
         })}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,15 +1,19 @@
 .navBar {
   width: 100%;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  border:red 4px solid;
   &_logo {
+    border:black 4px solid;
     margin-left: 2%;
     width: 17%;
     height: 4rem;
   }
   &_boutons {
+    border:blue 4px solid;
     width: 100%;
 
     background-color: #4a9e87;
@@ -48,3 +52,37 @@
     }
   }
 }
+
+.navBar_connecter{
+  width: 100%;
+    margin: 0 auto;
+  background-color:#4A9E87;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &_button{
+    width: 3rem;
+    border:4px solid #4A9E87;
+     background-color:#4A9E87;
+     cursor: pointer;
+     &_logo{
+      
+      width: 2rem;
+      &_link{
+        
+        display:none;
+      }
+     }
+    }
+  }
+  // .navBar_Desktop{
+  //   border:4px solid black;
+  //   background-color:green;
+  //      display: flex;
+  //      flex-direction: row;
+  //      justify-content: flex-end;
+       
+        
+       
+
+  // }

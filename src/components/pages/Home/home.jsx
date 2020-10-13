@@ -12,7 +12,7 @@ export default function Home(props) {
   return (
     <div className="home media_phone">
       <NavBar />
-      <h2>Bienvenue</h2>
+      <h2>Bienvenue </h2>
       <img
         className="home_image"
         src={imagecentre}

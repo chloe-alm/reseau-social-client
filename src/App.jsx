@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/pages/Home/home";
 import Login from "./components/pages/Login/login";
-import { Profil } from "./components/pages/Profil/profil";
+// import { Profil } from "./components/pages/Profil/profil";
 import Register from "./components/pages/Register/register";
 import OnePost from "./components/pages/OnePost/onePost";
 import ListPost from "./components/pages/ListPosts/listPosts";
@@ -52,9 +52,9 @@ function App() {
       <Router>
         {/* <Header /> */}
         <Switch>
-          {/* <Route exact path="/Onepost">
+          <Route exact path="/posts/:id">
             <OnePost/>
-          </Route> */}
+          </Route>
           <Route exact path="/posts">
             <ListPost />
           </Route>

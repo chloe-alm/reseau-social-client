@@ -1,0 +1,13 @@
+.containerList{
+border:blue 4px solid;
+height:100vh;
+&_card{
+    border: 4px solid red;
+    height:100vh;
+
+}
+&_link{
+    border: 4px solid pink;
+    }
+
+}
