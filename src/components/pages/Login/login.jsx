@@ -48,13 +48,13 @@ export default function Login(props) {
   } else {
     return (
       <div className="ContainerLog media_phone">
-        <div className="ContainerLog_header">Login</div>
+        <div className="ContainerLog_header">Se connecter</div>
         <div className="ContainerLog_content">
           <div className="ContainerLog_content_image">
             <img src={randonne} alt="cheval" />
           </div>
         </div>
-        <div className="ContainerLog_form">
+        <form className="ContainerLog_form">
           <div
             className="ContainerLog_form_group"
             method="POST"
@@ -82,12 +82,16 @@ export default function Login(props) {
               required
             ></input>
           </div>
-        </div>
+        </form>
         <div className="bouton">
           <button type="button" className="btn" onClick={handleSubmit}>
             Se connecter
           </button>
         </div>
+        <div class="form-link">
+        <a href="http://localhost:8001/">Mot de passe oublié ?</a> . 
+        <a href="http://localhost:8001/register">S'inscrire</a>
+    </div>
         <div>{errorForm}</div>
       </div>
     );
