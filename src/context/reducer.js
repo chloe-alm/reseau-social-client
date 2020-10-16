@@ -1,12 +1,14 @@
 const reducer = (state, action) => {
-  console.log(action.payload);
+  console.log("reducer check =>>", action);
   switch (action.type) {
     case "LOGIN":
       localStorage.setItem("token", action.payload.data.token);
+      localStorage.setItem("user", action.payload.data.user.id)
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user,
+        token: action.payload.data.token,
+        user: action.payload.data.user,
       };
     case "LOGOUT":
       localStorage.clear();
@@ -19,7 +21,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user,
+        user: action.payload,
       };
     default:
       return state;

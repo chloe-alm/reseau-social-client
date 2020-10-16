@@ -9,7 +9,7 @@ require("./_profil.scss");
 
 export function Profil(props) {
     
-
+    const [redirect, setRedirect] = useState(false);
     return (
         <>
             <p>je ss profil</p>

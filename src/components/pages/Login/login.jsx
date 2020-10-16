@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
-
+import { Link, Redirect, useHistory } from "react-router-dom";
 // import cheval from "../../../assets/images/cheval.png";
 import randonne from "../../../assets/images/randonne.png";
 import Axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/auth";
 // import submitBtn from "../../atomes/SubmitBtn"
-
 require("./_login.scss");
 
 export default function Login(props) {
-  const [login, setLogin] = useState({ email: "", password: "" });
-  const [redirect, setRedirect] = useState(false);
+  const { dispatch } = useContext(AuthContext);
+
+  const history = useHistory();
+
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+    isSubmitting: false,
+    errorMessage: null,
+  });
 
   const [errorForm, setErrorForm] = useState(" ");
 
@@ -18,82 +26,81 @@ export default function Login(props) {
     setLogin({ ...login, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    Axios({
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8001/api/login",
-      data: JSON.stringify(login),
-    })
-      // .post('http://localhost:8001/api/login', login)
-      .then((res) => {
-        console.log("#888", res);
-        localStorage.setItem("token", res.data.token);
-        setLogin({ email: "", password: "" });
-        props.setIsOpen(false);
-        setRedirect(true);
-      })
-      .catch((error) => {
-        console.log("#999", error.res);
-        console.log("#999", typeof error);
-        // setErrorForm(error.res.data.error)
-        // return response.status(500).json({
-        //     'error': "Impossible de faire cela"
-        // })
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setLogin({
+        ...login,
+        email: "",
+        password: "",
+        isSubmitting: true,
       });
+
+      const result = await Axios({
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        url: "http://localhost:8001/api/login",
+        data: JSON.stringify(login),
+      });
+      if (result.status === 200) {
+        return dispatch({ type: "LOGIN", payload: result }), history.push("./");
+        // localStorage.setItem("token", res.data.token);
+        // setLogin({ email: "", password: "" });
+      }
+    } catch (error) {
+      console.log("error catch login", error.res);
+      setLogin({
+        ...login,
+        isSubmitting: false,
+        errorMessage: error,
+      });
+    }
   };
-  if (redirect) {
-    return <Redirect to="profil" />;
-  } else {
-    return (
-      <div className="ContainerLog media_phone">
-        <div className="ContainerLog_header">Se connecter</div>
-        <div className="ContainerLog_content">
-          <div className="ContainerLog_content_image">
-            <img src={randonne} alt="cheval" />
-          </div>
+
+
+  return (
+    <div className="ContainerLog media_phone">
+      <div className="ContainerLog_header">Login</div>
+      <div className="ContainerLog_content">
+        <div className="ContainerLog_content_image">
+          <img src={randonne} alt="cheval" />
         </div>
-        <form className="ContainerLog_form">
-          <div
-            className="ContainerLog_form_group"
-            method="POST"
-            action="/login"
-            onSubmit={handleSubmit}
-          >
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={login.email}
-              onChange={handleChange}
-              required
-            ></input>
-          </div>
-          <div className="ContainerLog_form_group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              id="password"
-              name="password"
-              value={login.password}
-              onChange={handleChange}
-              required
-            ></input>
-          </div>
-        </form>
-        <div className="bouton">
-          <button type="button" className="btn" onClick={handleSubmit}>
-            Se connecter
-          </button>
-        </div>
-        <div class="form-link">
-        <a href="http://localhost:8001/">Mot de passe oublié ?</a> . 
-        <a href="http://localhost:8001/register">S'inscrire</a>
-    </div>
-        <div>{errorForm}</div>
       </div>
-    );
-  }
+      <div className="ContainerLog_form">
+        <div
+          className="ContainerLog_form_group"
+          method="POST"
+          action="/login"
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={login.email}
+            onChange={handleChange}
+            required
+          ></input>
+        </div>
+        <div className="ContainerLog_form_group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="text"
+            id="password"
+            name="password"
+            value={login.password}
+            onChange={handleChange}
+            required
+          ></input>
+        </div>
+      </div>
+      <div>{errorForm}</div>
+      <div className="bouton">
+        <button type="button" className="btn" onClick={handleSubmit}>
+          Se connecter
+        </button>
+      </div>
+    </div>
+  );
 }
