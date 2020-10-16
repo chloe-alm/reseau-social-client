@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 // import { Link, Redirect } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import logo from "../../../assets/images/logo.png"
 
 export default function Onepost() {
   const token = localStorage.getItem("token");
@@ -32,8 +33,14 @@ export default function Onepost() {
   }, [id, token]);
   return (
     <div className="containerOnePost">
+        <img className="navBar_logo" src={logo} alt="logo" />
+        <navBar/>
       <div>{errorForm}</div>
+      <div className="containerOnePost_contenu">
       <p>{post.content}</p>
+      <p>{post.like}</p>
+      <p>{post.picture}</p>
+      </div>
     </div>
   );
 }
