@@ -11,7 +11,8 @@ import listpost from "../../assets/images/list.png";
 import profil from"../../assets/images/user.png";
 import contact from"../../assets/images/email.png";
 import logout from "../../assets/images/logout.png";
-
+import postlogo from "../../assets/images/iconpost.png";
+import iconcontact from "../../assets/images/iconcontact.png";
 require("./_navBar.scss");
 
 export default function NavBar() {
@@ -24,7 +25,10 @@ export default function NavBar() {
 
   if (state.isAuthenticated === true) {
     return (
+      <>
+     
       <section className="navBar_connecter">
+       
               <button className="navBar_connecter_button">
               <img className="navBar_connecter_button_logo" src={logohome} alt="logo home"/>
              
@@ -32,7 +36,7 @@ export default function NavBar() {
               </button>
 
               <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={logopost} alt="logo post" />
+              <img className="navBar_connecter_button_logo" src={contact} alt="logo post" />
               <Link className="navBar_connecter_button_logo_link"to="/post">Post</Link>
               </button>
 
@@ -58,6 +62,7 @@ export default function NavBar() {
             
         
         </section>
+        </>
     )
       
   }

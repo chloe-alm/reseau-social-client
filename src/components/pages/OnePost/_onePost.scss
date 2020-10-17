@@ -1,0 +1,11 @@
+.post{
+    width: 100vw;
+    border:4px solid red;
+}
+.postPatch{
+    &_button{
+        height: 10vh;
+        width: 30vw;
+
+    }
+}

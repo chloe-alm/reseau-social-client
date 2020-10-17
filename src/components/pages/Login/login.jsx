@@ -5,6 +5,8 @@ import randonne from "../../../assets/images/randonne.png";
 import Axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
+import NavBar  from"../../molecules/NavBar";
+import LoginBtn from "../../atomes/LoginBtn"
 // import submitBtn from "../../atomes/SubmitBtn"
 require("./_login.scss");
 
@@ -52,7 +54,7 @@ export default function Login(props) {
       setLogin({
         ...login,
         isSubmitting: false,
-        errorMessage: error,
+        errorMessage: error.res,
       });
     }
   };
@@ -60,20 +62,22 @@ export default function Login(props) {
 
   return (
     <div className="ContainerLog media_phone">
-      <div className="ContainerLog_header">Login</div>
+      <div className="ContainerLog_header">Se connecter</div>
+      <NavBar/>
       <div className="ContainerLog_content">
         <div className="ContainerLog_content_image">
           <img src={randonne} alt="cheval" />
         </div>
       </div>
-      <div className="ContainerLog_form">
+      <form className="ContainerLog_form">
         <div
-          className="ContainerLog_form_group"
+          className="ContainerLog_form"
           method="POST"
           action="/login"
           onSubmit={handleSubmit}
         >
           <label htmlFor="email">Email</label>
+          <div className="ContainerLog_form_input">
           <input
             type="email"
             id="email"
@@ -82,8 +86,8 @@ export default function Login(props) {
             onChange={handleChange}
             required
           ></input>
-        </div>
-        <div className="ContainerLog_form_group">
+        
+        <div className="ContainerLog_form">
           <label htmlFor="password">Password</label>
           <input
             type="text"
@@ -94,13 +98,25 @@ export default function Login(props) {
             required
           ></input>
         </div>
+        </div>
       </div>
-      <div>{errorForm}</div>
-      <div className="bouton">
-        <button type="button" className="btn" onClick={handleSubmit}>
+      {/* <LoginBtn/> */}
+      <button type="submit" onClick={handleSubmit}>valider</button>
+      </form>
+      <div className="ContainerLog_from_error">{errorForm}</div>
+      {/* <div className="ContainerLog_from_bouton"> */}
+        {/* <LoginBtn type="button" className="ContainerLog_from_btn" onClick={handleSubmit}>
           Se connecter
-        </button>
-      </div>
+        </LoginBtn> */}
+      
+      {/* </div> */}
+
+    
+      
+      <div class="ContainerLog_from_form-link">
+        <a href="http://localhost:8001/">Mot de passe oublié ?</a> .
+        <a href="http://localhost:8001/register">S'inscrire</a>
+    </div>
     </div>
   );
 }

@@ -1,13 +1,29 @@
 .containerList{
-border:blue 4px solid;
+border:black 4px solid;
 height:100vh;
-&_card{
-    border: 4px solid red;
-    height:100vh;
-
+&_error{
+    padding-top: 2%;
+    color: #e0245e;
+    font-weight: normal;
 }
-&_link{
-    border: 4px solid pink;
+&_header{
+    color:#4a9e87;
+    padding-bottom: 2rem;
+    font-size:24px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+     display: flex;
+    justify-content: center;
     }
+    &_card{
+        
+        border: 4px solid red;
+        height:100%;
+    }
+    &_Link{
+        border: 4px solid pink;
+        }
+
+
+
 
 }
