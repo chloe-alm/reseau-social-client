@@ -36,7 +36,7 @@ export default function PostPatch({ datapost }) {
           data: JSON.stringify(post),
         });
         console.log("modif post", result);
-        if (result.status === 201) {
+        if (result.status === 200) {
           setPost(result.data.changedPost);
         }
       } catch (error) {

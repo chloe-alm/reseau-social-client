@@ -6,6 +6,8 @@ import PostCard from "../../molecules/postcard";
 import imagecentre from "../../../assets/images/centre.png";
 import { Link } from "react-router-dom";
 import NavBar  from"../../molecules/NavBar";
+import PostCreate from "../../organisms/PostCrud/postCreate";
+import PostDelete from "../../organisms/PostCrud/postDelete";
 
 require("./_listPosts.scss");
 
@@ -41,6 +43,10 @@ export default function Listposts(props) {
       <div className="containerList_error">{errorForm}</div>
       <div className="containerList_header">Les Posts</div>
       <NavBar/>
+      <div> Création d'un post
+          <PostCreate/>
+      </div>
+
       <div className="containerList_card">
         {list.map((post) => {
           return (

@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 export default function PostCard({ post }) {
+  // const [count, setCount] = useState(0);
+  // useEffect(() => {
+  //   post.like = patch a l input like seulement 
+  // })
+
+    
   return (
     <div className="postCard" key={post.id}>
       <div className="postCard-link-image">
         <img
           className="postCard-link-image-place"
-          src={`${post.picture}`}
+          src={post.picture}
           alt="aperçu du lieu"
         />
       </div>
@@ -18,4 +24,4 @@ export default function PostCard({ post }) {
       </div>
     </div>
   );
-}
+  }

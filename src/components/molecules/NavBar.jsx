@@ -8,8 +8,8 @@ import { useEffect } from "react";
 import logohome from "../../assets/images/home.png";
 import logopost from "../../assets/images/iconpost.png";
 import listpost from "../../assets/images/list.png";
-import profil from"../../assets/images/user.png";
-import contact from"../../assets/images/email.png";
+import profil from "../../assets/images/user.png";
+import contact from "../../assets/images/email.png";
 import logout from "../../assets/images/logout.png";
 import postlogo from "../../assets/images/iconpost.png";
 import iconcontact from "../../assets/images/iconcontact.png";
@@ -19,52 +19,83 @@ export default function NavBar() {
   const { state } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log(state);
+    state.user && console.log(state.user.firstName);
     return () => {};
   }, [state]);
 
   if (state.isAuthenticated === true) {
     return (
       <>
-     
-      <section className="navBar_connecter">
-       
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={logohome} alt="logo home"/>
-             
-              <Link className="navBar_connecter_button_logo_link"to="/">home</Link>
-              </button>
+        <section className="navBar_connecter">
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={logohome}
+              alt="logo home"
+            />
 
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={contact} alt="logo post" />
-              <Link className="navBar_connecter_button_logo_link"to="/post">Post</Link>
-              </button>
+            <Link className="navBar_connecter_button_logo_link" to="/">
+              home
+            </Link>
+          </button>
 
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={listpost} alt="logo liste post" />
-              <Link className="navBar_connecter_button_logo_link"to="/Listpost">Liste</Link>
-              </button>
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={contact}
+              alt="logo post"
+            />
+            <Link className="navBar_connecter_button_logo_link" to="/post">
+              Post
+            </Link>
+          </button>
 
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={profil} alt="logo profil" />
-              <Link className="navBar_connecter_button_logo_link" to="/profil">Profil</Link>
-              </button>
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={listpost}
+              alt="logo liste post"
+            />
+            <Link className="navBar_connecter_button_logo_link" to="/Listpost">
+              Liste
+            </Link>
+          </button>
 
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={contact} alt="logo contact" />
-              <Link className="navBar_connecter_button_logo_link"to="/contact">Contact</Link>
-              </button>
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={profil}
+              alt="logo profil"
+            />
+            <Link className="navBar_connecter_button_logo_link" to="/profil">
+              Profil
+            </Link>
+          </button>
 
-              <button className="navBar_connecter_button">
-              <img className="navBar_connecter_button_logo" src={logout} alt="logo deconnextion" />
-             <Link className="navBar_connecter_button_logo_link"to="/logout">Logout</Link>
-              </button> 
-            
-        
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={contact}
+              alt="logo contact"
+            />
+            <Link className="navBar_connecter_button_logo_link" to="/contact">
+              Contact
+            </Link>
+          </button>
+
+          <button className="navBar_connecter_button">
+            <img
+              className="navBar_connecter_button_logo"
+              src={logout}
+              alt="logo deconnextion"
+            />
+            <Link className="navBar_connecter_button_logo_link" to="/logout">
+              Logout
+            </Link>
+          </button>
         </section>
-        </>
-    )
-      
+      </>
+    );
   }
   return (
     <div className="navBar">
