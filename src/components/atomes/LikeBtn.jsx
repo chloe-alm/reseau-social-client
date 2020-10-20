@@ -6,7 +6,7 @@ export function LikeBtn(props) {
     return (
         <>
         <div>
-             <button type="submit">like</button>
+             <button type="boutton">like</button>
         </div>
         </>
     )
