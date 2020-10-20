@@ -88,7 +88,7 @@ export default function Login(props) {
           ></input>
         
         <div className="ContainerLog_form">
-          <label htmlFor="password">Password</label>
+          <label type="password">Password</label>
           <input
             type="text"
             id="password"

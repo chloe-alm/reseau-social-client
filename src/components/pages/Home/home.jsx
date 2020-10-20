@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import LoginBtn from "../../atomes/LoginBtn";
 import RegisterBtn from "../../atomes/RegisterBtn";
 import NavBar from "../../molecules/NavBar";
 import imagecentre from "../../../assets/images/centre.png";
 import "./_home.scss";
 import Footer from "../../organisms/Footer/Footer";
+import { AuthContext } from "../../../context/auth";
 
 export default function Home(props) {
-
-  
+  const { state } = useContext(AuthContext);
   return (
     <div className="home media_phone">
       <NavBar />
-      <h2>Bienvenue </h2>
+
+      <h2>
+        Bienvenue
+        <span> {state.user && state.user.firstName.toUpperCase()}</span>
+      </h2>
       <img
         className="home_image"
         src={imagecentre}

@@ -1,27 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import likelogo from "../../assets/images/like.png";
+import PostPatch from "../organisms/PostCrud/postPatch";
+import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
+require ("./_postcard.scss");
 
 export default function PostCard({ post }) {
-  // const [count, setCount] = useState(0);
-  // useEffect(() => {
-  //   post.like = patch a l input like seulement 
-  // })
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    post.like = `${count}`
+      
+      setCount()
+    })
+    
+  
 
     
   return (
     <div className="postCard" key={post.id}>
-      <div className="postCard-link-image">
+      <div className="postCard_image">
         <img
-          className="postCard-link-image-place"
+          
           src={post.picture}
-          alt="aperçu du lieu"
+          alt="aperçu de l'image"
         />
       </div>
-      <div className="postCard-link-infos">
-        <p className="postCard-link-infos-content">Content: {post.content}</p>
-        <p className="postCard-link-infos-like">• {post.like}likes</p>
+      <div className="postCard_contenu">
+        <p className="postCard_contenu_content">Le contenu: {post.content}</p>
+         <button className="postCard_contenu_like" onClick={()=>setCount(count+1)}>
+          <img 
+          src={likelogo} 
+          alt="image du like"/>• {post.like}</button>
       </div>
     </div>
   );
   }
+

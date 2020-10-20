@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 // import { Link, Redirect } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import logo from "../../../assets/images/logo.png";
-import PostGet from "../../organisms/PostCrud/postGet";
-import PostPatch from "../../organisms/PostCrud/postPatch";
+import { PostDelete } from "../../organisms/PostCrud/postDelete";
 require("./_onePost.scss");
-
 
 export default function Onepost() {
   const token = localStorage.getItem("token");
@@ -36,25 +33,12 @@ export default function Onepost() {
     fetchData();
   }, [id, token]);
   return (
-    
-    // <div className="containerOnePost">
-    //     <img className="navBar_logo" src={logo} alt="logo" />
-    //   <div>{errorForm}</div>
-    //   <div className="containerOnePost_contenu">
-    //   <p>{post.content}</p>
-    //   <p>{post.like}</p>
-    //   <p>{post.picture}</p>
-    //   </div>
-    // </div>
     <>
-    <div className="post">
-      <p>post</p>
-      
-    <PostGet post={post} errorForm={errorForm} />
-    <PostPatch datapost={post}/>
-   
-    
-    </div>
+      <div className="post">
+        <p>post</p>
+
+        <PostDelete post={post} />
+      </div>
     </>
   );
 }

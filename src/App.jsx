@@ -15,6 +15,7 @@ import reducer from "./context/reducer";
 function App() {
   const initialState = {
     isAuthenticated: false,
+    token:null,
     user: null,
   };
 

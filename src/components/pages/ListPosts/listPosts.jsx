@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import PostCard from "../../molecules/postcard";
 import imagecentre from "../../../assets/images/centre.png";
 import { Link } from "react-router-dom";
-import NavBar  from"../../molecules/NavBar";
+import NavBar from "../../molecules/NavBar";
 import PostCreate from "../../organisms/PostCrud/postCreate";
 import PostDelete from "../../organisms/PostCrud/postDelete";
 
@@ -32,7 +32,7 @@ export default function Listposts(props) {
           setList(result.data.post);
         }
       } catch (error) {
-        setErrorForm(error);
+        setErrorForm(error.response.data.description);
       }
     };
     fetchData();
@@ -42,9 +42,11 @@ export default function Listposts(props) {
     <div className="containerList">
       <div className="containerList_error">{errorForm}</div>
       <div className="containerList_header">Les Posts</div>
-      <NavBar/>
-      <div> Création d'un post
-          <PostCreate/>
+      <NavBar />
+      <div className="containerList_creation">
+        {" "}
+        Création d'un post
+        <PostCreate />
       </div>
 
       <div className="containerList_card">
@@ -53,9 +55,10 @@ export default function Listposts(props) {
             <Link className="containerList_link" to={`/posts/${post.id}`}>
               <PostCard post={post} key={post.id} />
             </Link>
+            //composant btnlike 
           );
         })}
-      </div>
+      </div>j
     </div>
   );
 }

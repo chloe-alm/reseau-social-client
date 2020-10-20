@@ -12,11 +12,16 @@ import profil from "../../assets/images/user.png";
 import contact from "../../assets/images/email.png";
 import logout from "../../assets/images/logout.png";
 import postlogo from "../../assets/images/iconpost.png";
-import iconcontact from "../../assets/images/iconcontact.png";
+import iconemail from "../../assets/images/iconmail.png";
 require("./_navBar.scss");
 
 export default function NavBar() {
   const { state } = useContext(AuthContext);
+
+  const Logout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
 
   useEffect(() => {
     state.user && console.log(state.user.firstName);
@@ -45,7 +50,7 @@ export default function NavBar() {
               src={contact}
               alt="logo post"
             />
-            <Link className="navBar_connecter_button_logo_link" to="/post">
+            <Link className="navBar_connecter_button_logo_link" to="/posts">
               Post
             </Link>
           </button>
@@ -56,7 +61,7 @@ export default function NavBar() {
               src={listpost}
               alt="logo liste post"
             />
-            <Link className="navBar_connecter_button_logo_link" to="/Listpost">
+            <Link className="navBar_connecter_button_logo_link" to="/posts">
               Liste
             </Link>
           </button>
@@ -75,7 +80,7 @@ export default function NavBar() {
           <button className="navBar_connecter_button">
             <img
               className="navBar_connecter_button_logo"
-              src={contact}
+              src={iconemail}
               alt="logo contact"
             />
             <Link className="navBar_connecter_button_logo_link" to="/contact">
@@ -83,7 +88,11 @@ export default function NavBar() {
             </Link>
           </button>
 
-          <button className="navBar_connecter_button">
+          <button className="navBar_connecter_button" onClick={
+            ()=>{
+              Logout();
+            }
+          }>
             <img
               className="navBar_connecter_button_logo"
               src={logout}
