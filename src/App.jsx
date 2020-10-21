@@ -12,6 +12,7 @@ import ListPost from "./components/pages/ListPosts/listPosts";
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
 
+
 function App() {
   const initialState = {
     isAuthenticated: false,

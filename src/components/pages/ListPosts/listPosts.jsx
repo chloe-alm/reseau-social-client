@@ -37,7 +37,7 @@ export default function Listposts(props) {
     };
     fetchData();
   }, [token]);
-
+  const [count, setCount] = useState(0);
   return (
     <div className="containerList">
       <div className="containerList_error">{errorForm}</div>
@@ -52,10 +52,12 @@ export default function Listposts(props) {
       <div className="containerList_card">
         {list.map((post) => {
           return (
-            <Link className="containerList_link" to={`/posts/${post.id}`}>
+            <div>
+            
               <PostCard post={post} key={post.id} />
-            </Link>
-            //composant btnlike 
+            {/* </Link> */}
+               
+              </div>
           );
         })}
       </div>j
