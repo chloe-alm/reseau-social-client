@@ -1,90 +1,97 @@
 .navBar {
-  width: 100%;
-  margin: 0 auto;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border:pink 4px solid;
+
   &_logo {
-    padding-bottom: 15px;
-    border:black 4px solid;
-    margin-left: 2%;
-    width: 17%;
-    height: 4rem;
-    &_boutons {
-      border:blue 4px solid;
-      width: 100%;
-      height: 2rem;
-      background-color: #4a9e87;
-      display: flex;
-      justify-content: space-around;
-      &_boutonregister {
-        color: black;
-        width: 25%;
-        border-radius: 5px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
-        float: left;
-        background: white;
-      
-  
-        &:hover {
-          background-color: #4a9e87;
-          cursor: pointer;
-        }
+    padding-bottom: 1rem;
+
+    width: 20%;
+    height: 5rem;
+    
+  }
+  &_boutons {
+    
+    padding-bottom: 0.4rem;
+    width: 100vw;
+    background-color: #4a9e87;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    &_register {
+      color: #fff;
+      font-size: 14px;
+      background: white;
+      font-style: italic;
+      border-radius: 10px;
+      margin: 30px 5px;
+      padding: 10px 30px;
+
+      cursor: pointer;
+      // opacity: 0.8;
+      float: right;
+      &:hover {
+        background-color: #65d1b3;
+        opacity: 2;
       }
-      &_boutonlogin {
-        background-color: #4a9e87;
-        color: white;
-        width: 25%;
-        border-radius: 5px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
-        float: left;
-        background: #ffffff;
-  
-        &:hover {
-          background-color: #4a9e87;
-          cursor: pointer;
-        }
+    }
+
+    &_link {
+      text-decoration: none;
+      color: black;
+    }
+    &_login {
+      color: #fff;
+      font-size: 14px;
+      background: white;
+      font-style: italic;
+      border-radius: 10px;
+      margin: 30px 5px;
+      padding: 10px 30px;
+
+      cursor: pointer;
+      // opacity: 0.8;
+      float: right;
+      &:hover {
+        background-color: #65d1b3;
+        opacity: 2;
+      }
+    }
+  }
+  &_link {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.navBar_connecter {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #4a9e87;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &_button {
+    width: 3rem;
+    border: 4px solid #4a9e87;
+    background-color: #4a9e87;
+    cursor: pointer;
+    &_logo {
+      width: 2rem;
+      &_link {
+        display: none;
       }
     }
   }
 }
-  
+// .navBar_Desktop{
+//   border:4px solid black;
+//   background-color:green;
+//      display: flex;
+//      flex-direction: row;
+//      justify-content: flex-end;
 
-
-.navBar_connecter{
-  width: 100%;
-    margin: 0 auto;
-  background-color:#4A9E87;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  &_button{
-    width: 3rem;
-    border:4px solid #4A9E87;
-     background-color:#4A9E87;
-     cursor: pointer;
-     &_logo{
-      
-      width: 2rem;
-      &_link{
-        
-        display:none;
-      }
-     }
-    }
-  }
-  // .navBar_Desktop{
-  //   border:4px solid black;
-  //   background-color:green;
-  //      display: flex;
-  //      flex-direction: row;
-  //      justify-content: flex-end;
-       
-        
-       
-
-  // }
+// }

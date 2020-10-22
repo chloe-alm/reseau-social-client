@@ -1,17 +1,30 @@
 .home {
+  height: 100vh;
+  width: 100vw;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:black;
   text-align:justify;
+  &_titre{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+     
+  }
   &_image{
-   
-    width: 100%;
-    
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   &_paragraphe{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     text-align: center;
   }
   &_paragrapheinfo{
     text-align: center;
+    padding-bottom: 3rem;
   }
 }
 h2{

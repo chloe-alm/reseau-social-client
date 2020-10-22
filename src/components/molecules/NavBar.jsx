@@ -110,12 +110,12 @@ export default function NavBar() {
     <div className="navBar">
       <img className="navBar_logo" src={logo} alt="logo" />
 
-      <div className="navBar_logo_boutons media_phone">
-        <button className="navBar_logo_boutons_boutonregister media_phone">
-          <Link to="/register">S'inscrire</Link>
+      <div className="navBar_boutons">
+        <button className="navBar_boutons_register media_phone">
+          <Link className="navBar_link" to="/register">S'inscrire</Link>
         </button>
-        <button className="navBar_logo_boutons_boutonlogin media_phone">
-          <Link to="/login">Login</Link>
+        <button className="navBar_boutons_login media_phone">
+          <Link className="navBar_link" to="/login">Login</Link>
         </button>
       </div>
     </div>

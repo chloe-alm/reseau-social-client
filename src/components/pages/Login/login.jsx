@@ -5,9 +5,11 @@ import randonne from "../../../assets/images/randonne.png";
 import Axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
-import NavBar  from"../../molecules/NavBar";
-import LoginBtn from "../../atomes/LoginBtn"
+import NavBar from "../../molecules/NavBar";
+import LoginBtn from "../../atomes/LoginBtn";
 // import submitBtn from "../../atomes/SubmitBtn"
+import prairieCheval from "../../../assets/images/prairiecheval.png";
+import Footer from "../../organisms/Footer/Footer";
 require("./_login.scss");
 
 export default function Login(props) {
@@ -59,64 +61,57 @@ export default function Login(props) {
     }
   };
 
-
   return (
     <div className="ContainerLog media_phone">
       <div className="ContainerLog_header">Se connecter</div>
-      <NavBar/>
+      <NavBar />
       <div className="ContainerLog_content">
         <div className="ContainerLog_content_image">
-          <img src={randonne} alt="cheval" />
+          <img src={prairieCheval} alt="cheval" />
         </div>
       </div>
-      <form className="ContainerLog_form">
-        <div
-          className="ContainerLog_form"
-          method="POST"
-          action="/login"
-          onSubmit={handleSubmit}
-        >
-          <label htmlFor="email">Email</label>
-          <div className="ContainerLog_form_input">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={login.email}
-            onChange={handleChange}
-            required
-          ></input>
-        
-        <div className="ContainerLog_form">
-          <label type="password">Password</label>
+
+      <form
+        className="loginForm"
+        method="POST"
+        action="/login"
+        onSubmit={handleSubmit}
+      >
+        <div className="loginForm_email">
+          <p>Email:</p>
           <input
             type="text"
-            id="password"
+            name="email"
+            id="emaillogin"
+            value={login.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="loginForm_password">
+          <p>Password with 6 characters minimum, 1 capitale, 1 chiffre:</p>
+          <input
+            type="password"
             name="password"
+            id="passLogin"
             value={login.password}
             onChange={handleChange}
-            required
-          ></input>
+          />
         </div>
-        </div>
-      </div>
-      {/* <LoginBtn/> */}
-      <button type="submit" onClick={handleSubmit}>valider</button>
-      </form>
-      <div className="ContainerLog_from_error">{errorForm}</div>
-      {/* <div className="ContainerLog_from_bouton"> */}
-        {/* <LoginBtn type="button" className="ContainerLog_from_btn" onClick={handleSubmit}>
+        <div className="loginForm_erreur">{errorForm}</div>
+        <button
+          className="loginForm_bouton"
+          type="submit"
+          onClick={handleSubmit}
+        >
           Se connecter
-        </LoginBtn> */}
-      
-      {/* </div> */}
+        </button>
+      </form>
 
-    
-      
-      <div class="ContainerLog_from_form-link">
+      <div class="loginForm_link">
         <a href="http://localhost:8001/">Mot de passe oublié ?</a> .
         <a href="http://localhost:8001/register">S'inscrire</a>
-    </div>
+      </div>
+      <Footer />
     </div>
   );
 }

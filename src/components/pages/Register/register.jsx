@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { link, useHistory } from "react-router-dom";
-import prairiecheval from "../../../assets/images/prairiecheval.png";
+import chevauxpre from "../../../assets/images/chevauxpre.png";
+import NavBar from "../../molecules/NavBar";
+import Footer from "../../organisms/Footer/Footer";
 // import { useAlert } from 'react-alert'
 require("./_register.scss");
 
@@ -62,18 +64,21 @@ export default function Register(props) {
   return (
     <div className="ContainerReg media_phone">
       <div className="ContainerReg_header">S'inscrire</div>
+      <NavBar/>
       <div className="ContainerReg_content">
         <div className="ContainerReg_content_image">
-          <img src={prairiecheval} alt="prairie avec un cheval" />
+          <img src={chevauxpre} alt="prairie avec un cheval" />
         </div>
       </div>
+
+
       <form
-        methode="post"
-        className="ContainerReg_from"
+        methode="POST"
+        className="registerForm"
         action="/register"
         onSubmit={handleSubmit}
       >
-        <div className="ContainerReg_form_group">
+        <div className="registerForm_nom">
           <label htmlFor="firstName">Nom</label>
           <input
             type="text"
@@ -84,7 +89,7 @@ export default function Register(props) {
             // required
           />
 
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_prenom">
             <label htmlFor="lastName">Prénom</label>
             <input
               type="text"
@@ -95,7 +100,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_email">
             <label htmlFor="email">Email</label>
             <input
               type="text"
@@ -106,7 +111,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_password">
             <label htmlFor="password">Password</label>
             <input
               type="text"
@@ -117,7 +122,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_pays">
             <label htmlFor="country">Pays</label>
             <input
               type="text"
@@ -128,7 +133,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_date">
             <label htmlFor="birthday">Birthday</label>
             <input
               type="date"
@@ -139,7 +144,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="ContainerReg_form_group">
+          <div className="registerForm_picture">
             <label htmlFor="picture">Photo</label>
             <input
               type="text"
@@ -152,12 +157,13 @@ export default function Register(props) {
           </div>
         </div>
       </form>
-      <div>{errorForm}</div>
-      <div className="ContainerReg_from_bouton">
-        <button type="submit" className="btn" onClick={handleSubmit}>
+      <div className="registerForm_erreur">{errorForm}</div>
+   
+        <button type="submit" className="registerForm_bouton"onClick={handleSubmit}>
           S'inscrire
         </button>
-      </div>
+        <Footer />
     </div>
+     
   );
 }

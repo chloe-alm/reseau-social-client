@@ -30,7 +30,7 @@ export default function Footer(props) {
             </span>
           </a>
         </div>
-          <div>© 2020 Reseau social centre équestre, Inc. All rights reserved</div>
+          <div>©2020 Centre équestre Jablines. Inc. tous droits réservés</div>
         
       </footer>
     </>

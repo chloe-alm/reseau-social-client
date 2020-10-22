@@ -6,20 +6,21 @@ import imagecentre from "../../../assets/images/centre.png";
 import "./_home.scss";
 import Footer from "../../organisms/Footer/Footer";
 import { AuthContext } from "../../../context/auth";
-
+import cheval from "../../../assets/images/cheval.png";
 export default function Home(props) {
   const { state } = useContext(AuthContext);
   return (
     <div className="home media_phone">
+
       <NavBar />
 
-      <h2>
+      <h2 className="home_titre media_phone">
         Bienvenue
         <span> {state.user && state.user.firstName.toUpperCase()}</span>
       </h2>
       <img
         className="home_image"
-        src={imagecentre}
+        src={cheval}
         alt="image du centre equestre"
       />
       <p className="home_paragraphe media_phone">

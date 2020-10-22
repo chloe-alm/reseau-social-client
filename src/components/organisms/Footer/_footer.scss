@@ -3,10 +3,11 @@
 .footer{
     height: 10vh;
     padding-top:20px;
-    
-    &_reseaux{
+   &_reseaux{
         display: flex;
         justify-content: space-around;
+        text-align: center;
+        padding-bottom:2rem;
     }
     
 }
