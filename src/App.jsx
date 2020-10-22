@@ -11,6 +11,7 @@ import ListPost from "./components/pages/ListPosts/listPosts";
 
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
+import Footer from "./components/organisms/Footer/Footer";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      {/* <Footer/> */}
     </AuthContext.Provider>
   );
 }

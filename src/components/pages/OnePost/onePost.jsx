@@ -35,7 +35,7 @@ export default function Onepost() {
   return (
     <>
       <div className="post">
-        <p>post</p>
+       
 
         <PostDelete post={post} />
       </div>

@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import PostDelete from "../../organisms/PostCrud/postDelete";
 import { useHistory } from "react-router-dom";
-
+import NavBar from "../../molecules/NavBar";
+import horse from "../../../assets/images/horse.png";
+import Footer from "../Footer/Footer";
+require("./_postPatch.scss");
 
 export default function PostPatch({ datapost }) {
   const token = localStorage.getItem("token");
@@ -50,15 +53,23 @@ export default function PostPatch({ datapost }) {
     };
     
   return (
-    <div>
+    <div className="container">
+      <NavBar/>
+      <h2 className="container_titre">Modification du post</h2>
+
       <form
-        className="postPatch"
+        className="container_postPatch"
         method="PATCH"
         action="/posts"
         onSubmit={handleSubmit}
       >
-        <div className="postPatch_content">
-          <p>Le contenu : </p>
+         <img
+            className="container_postPatch_image"
+            src={horse}
+            alt="balade à cheval"
+          />
+        <div className="container_postPatch_content">
+          <p><strong>Le contenu :</strong> </p>
           <input
             type="text"
             name="content"
@@ -68,12 +79,12 @@ export default function PostPatch({ datapost }) {
           ></input>
         </div>
 
-        <div className="postPatch_like">
-          <p>Like {post.like}</p>
+        <div className="container_postPatch_like">
+          <p><strong>Like :</strong> {post.like}</p>
         </div>
 
-        <div className="postPatch_picture">
-          <p>Photos url: </p>
+        <div className="container_postPatch_picture">
+          <p><strong>Photos url : </strong> </p>
           <input
             type="text"
             name="picture"
@@ -83,15 +94,16 @@ export default function PostPatch({ datapost }) {
           ></input>
         </div>
 
-        <div>{post.errorMessage}</div>
+        <div className="container_postPatch_erreur">{post.errorMessage}</div>
         <button
           type="submit"
-          className="postPatch_button"
+          className="container_postPatch_button"
           onClick={handleSubmit}
         >
           Modifier
         </button>
       </form>
+      <Footer/>
     </div>
   );
 }

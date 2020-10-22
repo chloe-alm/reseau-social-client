@@ -1,0 +1,58 @@
+.container {
+    height: 90vh;
+    &_titre {
+        height: 10%;
+        padding-top: 2rem;
+        }
+      &_postPatch{
+          background-color: palegreen;
+          height: 85%;
+          margin:30px 10px 10px 10px;
+          &_image{
+            height: 40%;
+            width: 100%;
+            object-fit: cover;
+            
+          }
+          &_content{
+              border:4px solid red;
+              display: flex;
+              flex-direction: column;
+              height: 20%;
+              & div input{
+                height: 5vh;
+                width: 60vw;
+                border-radius: 4px;
+              }
+          }
+          &_like{
+              border: 4px solid blue;
+          }
+          &_picture{
+            border: 4px solid green;
+          }
+      }
+      &_erreur{
+        height: 2%;
+        color:#e0245e;
+          font-weight: normal;
+      }
+      &_button{
+
+        color: #fff;
+        font-size: 14px;
+        background: #4a9e87;
+        font-style: italic;
+        border-radius: 10px;
+        margin: 30px 5px;
+        padding: 10px 30px;
+        cursor: pointer;
+        // opacity: 0.8;
+        float: right;
+        &:hover {
+        background-color: #65d1b3;
+        opacity: 2;
+    }
+   }
+}
+  

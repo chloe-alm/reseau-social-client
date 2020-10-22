@@ -1,0 +1,84 @@
+
+.container {
+  height: 90vh;
+ 
+
+  
+  
+
+  &_titre {
+
+    height: 10%;
+    
+  }
+  &_OnePost {
+    
+    height: 85%;
+    margin:30px 10px 10px 10px;
+    &_image {
+        height: 40%;
+        width: 100%;
+        object-fit: cover;
+      
+
+    }
+    &_details {
+        height: 55%;
+      &_content {
+    
+        height: 84%;
+      }
+      &_like {
+        height: 8%;
+        // border: brown solid 4px;
+      }
+    //   &_picture {
+    //       height: 8%;
+    //     // border: green solid 4px;
+    //   }
+    }
+    &_erreur {
+        height: 2%;
+    //   color: blue;
+      font-weight: normal;
+    }
+
+   &_boutonSupprimer{
+       
+      
+       color: #fff;
+       font-size: 14px;
+       background: #ed8e79;
+       font-style: italic;
+       border-radius: 10px;
+       margin: 30px 5px;
+       padding: 10px 30px;
+       cursor: pointer;
+       opacity: 0.8;
+       float: right;
+       &:hover {
+         background-color: #65d1b3;
+         opacity: 2;
+       }
+   } 
+   &_boutonModifier{
+
+  
+ 
+    color: #fff;
+    font-size: 14px;
+    background: #4a9e87;
+    font-style: italic;
+    border-radius: 10px;
+    margin: 30px 5px;
+    padding: 10px 30px;
+    cursor: pointer;
+    // opacity: 0.8;
+    float: right;
+    &:hover {
+      background-color: #65d1b3;
+      opacity: 2;
+    }
+   }
+}
+}

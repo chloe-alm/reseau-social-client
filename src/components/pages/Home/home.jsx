@@ -43,7 +43,7 @@ export default function Home(props) {
         du lundi au vendredi de 9h30 à 12h30 et de 14h à 18h et le samedi
         après-midi (permanence)
       </p>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -105,13 +105,14 @@ export default function Login(props) {
         >
           Se connecter
         </button>
+        
       </form>
 
       <div class="loginForm_link">
         <a href="http://localhost:8001/">Mot de passe oublié ?</a> .
         <a href="http://localhost:8001/register">S'inscrire</a>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

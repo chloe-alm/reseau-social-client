@@ -162,7 +162,7 @@ export default function Register(props) {
         <button type="submit" className="registerForm_bouton"onClick={handleSubmit}>
           S'inscrire
         </button>
-        <Footer />
+        <Footer/>
     </div>
      
   );
