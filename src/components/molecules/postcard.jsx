@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import likelogo from "../../assets/images/like.png";
+import poucelike from "../../assets/images/poucelike.png";
 import PostPatch from "../organisms/PostCrud/postPatch";
 import { useEffect, useState } from "react";
 import Axios from "axios";
+import Footer from "../organisms/Footer/Footer";
 // import { Link } from "react-router-dom";
 require("./_postcard.scss");
 
@@ -48,20 +49,18 @@ export default function PostCard({ post }) {
   };
 
   return (
+    
     <div className="postCard" key={post.id}>
       <div className="postCard_image">
-        <Link className="containerList_link" to={`/posts/${post.id}`}>
+        <Link className="postCard_link" to={`/posts/${post.id}`}>
           <img src={post.picture} alt="aperçu de l'image" />
         </Link>
       </div>
       <div className="postCard_contenu">
-        <Link className="containerList_link" to={`/posts/${post.id}`}>
-          <p className="postCard_contenu_content">Le contenu: {post.content}</p>
+        <Link className="postCard_contenu_link" to={`/posts/${post.id}`}>
+          <p className="postCard_contenu_content"> <strong>Le contenu: </strong> {post.content}</p>
         </Link>
-        {/* <button className="postCard_contenu_like" onClick={()=>setCount(count+1)}>
-          <img 
-          src={likelogo} 
-          alt="image du like"/>• {post.like}</button> */}
+    
 
         <form
           className="postCard_contenu_form"
@@ -69,23 +68,16 @@ export default function PostCard({ post }) {
           action="/posts"
           onSubmit={handleSubmit}
         >
-          {/* <p>TESt{count.like}</p> */}
-          {/* <input
-           type="text"
-           name="like"
-           id="like"
-           value={count.like}
-           onChange={handleChange}>
-
-           </input> */}
 
           <button type="submit" className="postCard_contenu_like" onClick={handleSubmit}>
           {count.like} <img 
-          src={likelogo} 
+          src={poucelike} 
           alt="image du like"/>
           </button>
         </form>
       </div>
+      
     </div>
+    
   );
 }

@@ -97,12 +97,14 @@ export default function PostPatch({ datapost }) {
         <div className="container_postPatch_erreur">{post.errorMessage}</div>
         <button
           type="submit"
-          className="container_postPatch_button"
+          className="container_button"
           onClick={handleSubmit}
         >
           Modifier
         </button>
       </form>
+      
+
       <Footer/>
     </div>
   );

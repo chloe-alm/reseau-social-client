@@ -1,6 +1,6 @@
 .navBar {
   width: 100vw;
-  display: flex;
+display: flex;
   flex-direction: column;
   align-items: center;
 
@@ -68,25 +68,77 @@
 }
 
 .navBar_connecter {
+ 
   width: 100%;
-  margin: 0 auto;
+  height: 8vh;
+  // margin: 0 auto;
   background-color: #4a9e87;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  &_button {
-    width: 3rem;
-    border: 4px solid #4a9e87;
-    background-color: #4a9e87;
-    cursor: pointer;
-    &_logo {
-      width: 2rem;
-      &_link {
+  &_link{
+    
+
+    // border: 4px solid #4a9e87;
+    //  background-color: #4a9e87;
+    width: 11%;
+     height: 8vh;
+     object-fit: cover;
+     &_button{
+      
+    //   padding-top: 1rem;
+    //  padding-bottom: 1rem;
+  
+     width: 100%;
+     height: 100%;
+     
+  
+     
+
+   
+   
+    }
+    & p{
+     
+      color:black;
+      text-decoration: none;
+      display: none;
+      
+    }
+   
+  }
+  &_button{
+   border:none;
+    &_logo{
+      background-color: #4a9e87;
+      height: 8vh;
+      border: 4px solid #4a9e87;
+      
+      &_link{
+        
+        text-decoration:none;
         display: none;
+      
       }
+
     }
   }
+
+
 }
+//   &_button {
+//     width: 3rem;
+//     border: 4px solid #4a9e87;
+//     background-color: #4a9e87;
+//     cursor: pointer;
+//     &_logo {
+//       width: 2rem;
+//       &_link {
+//         display: none;
+//       }
+//     }
+//   }
+// }
 // .navBar_Desktop{
 //   border:4px solid black;
 //   background-color:green;

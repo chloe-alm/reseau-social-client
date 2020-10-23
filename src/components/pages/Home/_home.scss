@@ -10,21 +10,25 @@
      
   }
   &_image{
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    object-fit: cover;
+    width: 100%;
+    padding-top: 2rem;
   }
   &_paragraphe{
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    text-align: center;
+    text-align: justify;
+   
+   
   }
   &_paragrapheinfo{
-    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
     padding-bottom: 3rem;
+    text-align: center;
   }
 }
 h2{

@@ -3,8 +3,8 @@ import Axios from "axios";
 // import { Link, Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import PostCard from "../../molecules/postcard";
-import imagecentre from "../../../assets/images/centre.png";
-import { Link } from "react-router-dom";
+
+
 import NavBar from "../../molecules/NavBar";
 import PostCreate from "../../organisms/PostCrud/postCreate";
 import PostDelete from "../../organisms/PostCrud/postDelete";
@@ -40,12 +40,12 @@ export default function Listposts(props) {
   const [count, setCount] = useState(0);
   return (
     <div className="containerList">
-      <div className="containerList_error">{errorForm}</div>
-      <div className="containerList_header">Les Posts</div>
+      <div className="containerList_erreur">{errorForm}</div>
+      <div className="containerList_titre">Les Posts</div>
       <NavBar />
       <div className="containerList_creation">
         {" "}
-        Création d'un post
+        <p>Création d'un post</p>
         <PostCreate />
       </div>
 

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
-// import cheval from "../../../assets/images/cheval.png";
-import randonne from "../../../assets/images/randonne.png";
+
 import Axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
 import NavBar from "../../molecules/NavBar";
-import LoginBtn from "../../atomes/LoginBtn";
-// import submitBtn from "../../atomes/SubmitBtn"
+
 import prairieCheval from "../../../assets/images/prairiecheval.png";
 import Footer from "../../organisms/Footer/Footer";
 require("./_login.scss");
@@ -52,11 +50,11 @@ export default function Login(props) {
         // setLogin({ email: "", password: "" });
       }
     } catch (error) {
-      console.log("error catch login", error.res);
+      console.log("error catch login", error.response);
       setLogin({
         ...login,
         isSubmitting: false,
-        errorMessage: error.res,
+        errorMessage: error.response,
       });
     }
   };
@@ -83,6 +81,7 @@ export default function Login(props) {
             type="text"
             name="email"
             id="emaillogin"
+            placeholder="Email"
             value={login.email}
             onChange={handleChange}
           />
@@ -93,6 +92,7 @@ export default function Login(props) {
             type="password"
             name="password"
             id="passLogin"
+            placeholder="Mot de passe"
             value={login.password}
             onChange={handleChange}
           />
@@ -109,8 +109,8 @@ export default function Login(props) {
       </form>
 
       <div class="loginForm_link">
-        <a href="http://localhost:8001/">Mot de passe oublié ?</a> .
-        <a href="http://localhost:8001/register">S'inscrire</a>
+        <a href="/">Mot de passe oublié ?</a> .
+        <a href="/register">S'inscrire</a>
       </div>
       <Footer/>
     </div>

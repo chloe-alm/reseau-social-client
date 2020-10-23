@@ -56,7 +56,7 @@ function App() {
         {/* <Header /> */}
         <Switch>
           <Route exact path="/posts/:id">
-            <OnePost/>
+            <OnePost />
           </Route>
           <Route exact path="/posts">
             <ListPost />

@@ -11,7 +11,7 @@ import listpost from "../../assets/images/list.png";
 import profil from "../../assets/images/user.png";
 import contact from "../../assets/images/email.png";
 import logout from "../../assets/images/logout.png";
-import postlogo from "../../assets/images/iconpost.png";
+import post from "../../assets/images/post.png";
 import iconemail from "../../assets/images/iconmail.png";
 require("./_navBar.scss");
 
@@ -32,71 +32,71 @@ export default function NavBar() {
     return (
       <>
         <section className="navBar_connecter">
-          <button className="navBar_connecter_button">
-            <img
-              className="navBar_connecter_button_logo"
-              src={logohome}
-              alt="logo home"
-            />
+          <Link className="navBar_connecter_link" to="/">
+            <button className="navBar_connecter_button">
+              <p>Home</p>
+              <img
+                className="navBar_connecter_button_logo"
+                src={logohome}
+                alt="logo post"
+              />
+            </button>
+          </Link>
 
-            <Link className="navBar_connecter_button_logo_link" to="/">
-              home
-            </Link>
-          </button>
+          <Link className="navBar_connecter_link" to="/posts">
+            <p>Post</p>
+            <button className="navBar_connecter_button">
+              <img
+                className="navBar_connecter_button_logo"
+                src={post}
+                alt="logo post"
+              />
+            </button>
+          </Link>
 
-          <button className="navBar_connecter_button">
-            <img
-              className="navBar_connecter_button_logo"
-              src={contact}
-              alt="logo post"
-            />
-            <Link className="navBar_connecter_button_logo_link" to="/posts">
-              Post
-            </Link>
-          </button>
+          <Link className="navBar_connecter_link" to="/posts">
+            <p>Liste Post</p>
+            <button className="navBar_connecter_button">
+              <img
+                className="navBar_connecter_button_logo"
+                src={listpost}
+                alt="logo liste post"
+              />
+            </button>
+          </Link>
 
-          <button className="navBar_connecter_button">
-            <img
-              className="navBar_connecter_button_logo"
-              src={listpost}
-              alt="logo liste post"
-            />
-            <Link className="navBar_connecter_button_logo_link" to="/posts">
-              Liste
-            </Link>
-          </button>
+          <Link className="navBar_connecter_link" to="/profil">
+            <p>Profil </p>
+            <button className="navBar_connecter_button">
+              <img
+                className="navBar_connecter_button_logo"
+                src={profil}
+                alt="logo profil"
+              />
+            </button>
+          </Link>
 
-          <button className="navBar_connecter_button">
-            <img
-              className="navBar_connecter_button_logo"
-              src={profil}
-              alt="logo profil"
-            />
-            <Link className="navBar_connecter_button_logo_link" to="/profil">
-              Profil
-            </Link>
-          </button>
+          <Link className="navBar_connecter_link" to="/contact">
+            <p>Contact</p>
+            <button className="navBar_connecter_button">
+              <img
+                className="navBar_connecter_button_logo"
+                src={contact}
+                alt="logo contact"
+              />
+            </button>
+          </Link>
 
-          <button className="navBar_connecter_button">
-            <img
-              className="navBar_connecter_button_logo"
-              src={iconemail}
-              alt="logo contact"
-            />
-            <Link className="navBar_connecter_button_logo_link" to="/contact">
-              Contact
-            </Link>
-          </button>
-
-          <button className="navBar_connecter_button" onClick={
-            ()=>{
+          <button
+            className="navBar_connecter_button"
+            onClick={() => {
               Logout();
-            }
-          }>
+            }}
+          >
             <img
               className="navBar_connecter_button_logo"
               src={logout}
-              alt="logo deconnextion"
+              alt="logo deconnexion"
             />
             <Link className="navBar_connecter_button_logo_link" to="/logout">
               Logout
@@ -112,10 +112,14 @@ export default function NavBar() {
 
       <div className="navBar_boutons">
         <button className="navBar_boutons_register media_phone">
-          <Link className="navBar_link" to="/register">S'inscrire</Link>
+          <Link className="navBar_link" to="/register">
+            S'inscrire
+          </Link>
         </button>
         <button className="navBar_boutons_login media_phone">
-          <Link className="navBar_link" to="/login">Login</Link>
+          <Link className="navBar_link" to="/login">
+            Login
+          </Link>
         </button>
       </div>
     </div>

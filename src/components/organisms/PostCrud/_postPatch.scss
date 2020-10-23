@@ -1,11 +1,12 @@
 .container {
     height: 90vh;
+   
     &_titre {
         height: 10%;
         padding-top: 2rem;
         }
       &_postPatch{
-          background-color: palegreen;
+       
           height: 85%;
           margin:30px 10px 10px 10px;
           &_image{
@@ -15,21 +16,33 @@
             
           }
           &_content{
-              border:4px solid red;
+            margin-top:10px;
+             
               display: flex;
               flex-direction: column;
               height: 20%;
-              & div input{
+              & input{
+                margin-top:10px;
                 height: 5vh;
-                width: 60vw;
+                width: 90vw;
                 border-radius: 4px;
+                scroll-behavior: auto;
               }
           }
           &_like{
-              border: 4px solid blue;
+            margin-top:1px;
+             
           }
           &_picture{
-            border: 4px solid green;
+            margin-top:10px;
+          
+            & input{
+              margin-top:10px;
+              height: 5vh;
+              width: 90vw;
+              border-radius: 4px;
+              // scroll-behavior: smooth;
+            }
           }
       }
       &_erreur{
@@ -38,7 +51,9 @@
           font-weight: normal;
       }
       &_button{
-
+        width: 90%;
+       
+       text-align: center;
         color: #fff;
         font-size: 14px;
         background: #4a9e87;
@@ -48,7 +63,7 @@
         padding: 10px 30px;
         cursor: pointer;
         // opacity: 0.8;
-        float: right;
+        // float: right;
         &:hover {
         background-color: #65d1b3;
         opacity: 2;

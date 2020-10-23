@@ -2,7 +2,7 @@ import Axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+require("./_postCreate.scss");
 export default function PostCreate() {
   const history = useHistory();
   const token = localStorage.getItem("token");
@@ -47,14 +47,14 @@ export default function PostCreate() {
   };
 
   return (
-    <div>
+    <div className="container">
       <form
-        className="postCreate"
+        className="container_postCreate"
         method="POST"
         action="/posts"
         onSubmit={handleSubmit}
       >
-        <div className="postCreate_content">
+        <div className="container_postCreate_content">
           <p>Le contenu : </p>
           <input
             type="text"
@@ -65,7 +65,7 @@ export default function PostCreate() {
           ></input>
         </div>
 
-        <div className="postCreate_picture">
+        <div className="container_postCreate_picture">
           <p>Photos url: </p>
           <input
             type="text"
@@ -76,11 +76,11 @@ export default function PostCreate() {
           ></input>
         </div>
 
-        <div>{createPost.errorMessage}</div>
+        <div className="container_postCreate_erreur">{createPost.errorMessage}</div>
 
         <button
           type="submit"
-          className="postCreate_button"
+          className="container_postCreate_button"
           onClick={handleSubmit}
         >
           Creer
