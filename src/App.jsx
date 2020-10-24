@@ -12,6 +12,8 @@ import ListPost from "./components/pages/ListPosts/listPosts";
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
 import Footer from "./components/organisms/Footer/Footer";
+import { transitions, positions, Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
   }, []);
 
   return (
+    <AlertProvider template={AlertTemplate} >
     <AuthContext.Provider
       value={{
         state,
@@ -77,6 +80,8 @@ function App() {
       </Router>
       {/* <Footer/> */}
     </AuthContext.Provider>
+    </AlertProvider>
+   
   );
 }
 

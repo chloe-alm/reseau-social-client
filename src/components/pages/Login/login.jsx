@@ -8,6 +8,8 @@ import NavBar from "../../molecules/NavBar";
 
 import prairieCheval from "../../../assets/images/prairiecheval.png";
 import Footer from "../../organisms/Footer/Footer";
+import { useAlert } from 'react-alert';
+
 require("./_login.scss");
 
 export default function Login(props) {
@@ -21,8 +23,9 @@ export default function Login(props) {
     isSubmitting: false,
     errorMessage: null,
   });
-
+  const alert = useAlert();
   const [errorForm, setErrorForm] = useState(" ");
+  
 
   const handleChange = (event) => {
     setLogin({ ...login, [event.target.name]: event.target.value });
@@ -45,7 +48,11 @@ export default function Login(props) {
         data: JSON.stringify(login),
       });
       if (result.status === 200) {
-        return dispatch({ type: "LOGIN", payload: result }), history.push("./");
+        return(
+           dispatch({ type: "LOGIN", payload: result }),
+            history.push("./"),
+            alert.show("Vous êtes connecté")
+        );
         // localStorage.setItem("token", res.data.token);
         // setLogin({ email: "", password: "" });
       }

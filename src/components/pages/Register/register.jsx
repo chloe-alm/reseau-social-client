@@ -4,6 +4,7 @@ import { link, useHistory } from "react-router-dom";
 import chevauxpre from "../../../assets/images/chevauxpre.png";
 import NavBar from "../../molecules/NavBar";
 import Footer from "../../organisms/Footer/Footer";
+import { useAlert } from "react-alert";
 // import { useAlert } from 'react-alert'
 require("./_register.scss");
 
@@ -26,7 +27,7 @@ export default function Register(props) {
 
   const [errorForm, setErrorForm] = useState(" ");
 
-  // const alert = useAlert()
+  const alert = useAlert();
 
   const handleChange = (event) => {
     setRegister({ ...register, [event.target.name]: event.target.value });
@@ -50,7 +51,7 @@ export default function Register(props) {
         history.push("./login");
         // setRedirect(true)
         // props.setIsOpen(false)
-        // alert.show('Inscription validée!')
+        alert.show('Inscription validée!')
       })
       .catch((error) => {
         console.log("#777", error.response);
