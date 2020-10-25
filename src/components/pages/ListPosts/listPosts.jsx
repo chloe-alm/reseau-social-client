@@ -60,7 +60,7 @@ export default function Listposts(props) {
               </div>
           );
         })}
-      </div>j
+      </div>
     </div>
   );
 }

@@ -5,11 +5,13 @@ import { useHistory } from "react-router-dom";
 import NavBar from "../../molecules/NavBar";
 import horse from "../../../assets/images/horse.png";
 import Footer from "../Footer/Footer";
+import { useAlert } from 'react-alert';
 require("./_postPatch.scss");
 
 export default function PostPatch({ datapost }) {
   const token = localStorage.getItem("token");
   const history = useHistory();
+  const alert = useAlert();
   // const token = localStorage.getItem("id")
   //faire la focntion userid correspond au userid token
   let [post, setPost] = useState({
@@ -42,6 +44,7 @@ export default function PostPatch({ datapost }) {
         if (result.status === 201) {
           setPost(result.data.changedPost)
           history.push("/posts")
+          alert.show("Post bien modifié")
         }
       } catch (error) {
         setPost({
@@ -70,13 +73,15 @@ export default function PostPatch({ datapost }) {
           />
         <div className="container_postPatch_content">
           <p><strong>Le contenu :</strong> </p>
-          <input
+          <textarea
             type="text"
             name="content"
             id="content"
+            rows="10"
+            cols="20"
             value={post.content}
             onChange={handleChange}
-          ></input>
+          ></textarea>
         </div>
 
         <div className="container_postPatch_like">
@@ -105,7 +110,7 @@ export default function PostPatch({ datapost }) {
       </form>
       
 
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

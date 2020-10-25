@@ -1,58 +1,54 @@
-.postCard{
-   border:black 1px solid;
-    display: flex;
-    flex-direction: column;
-    margin: 3px 10px 10px 10px;
-   
-    &_image{
-        
-        object-fit: cover;
-        width: 100%;
-        
-        & img{
+.postCard {
+  font-family: "Lato", sans-serif;
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  // margin: 3px 0px 0px 10px;
+  padding: 1rem 1rem 1rem 1rem;
+
+  &_image {
+    object-fit: cover;
+    width: 100%;
+
+    & img {
+      max-width: 100%;
+      min-height: 100%;
+    }
+  }
+  &_link {
+    a {
+      color: black;
+      text-decoration: none;
+      padding-bottom: 4rem;
+    }
+  }
+  &_contenu {
+    text-decoration: none;
+    padding-block-start: 1rem;
+
+display: block;
+    width: 100%;
     
-            max-width: 100%;
-            min-height: 100%;
-          }
-    }
-    &_link{
-       
-        a {
-            color: black;
-            text-decoration: none;
-            padding-bottom: 4rem;
-          }
-    }
-    &_contenu{
+    &_link {
+      text-decoration: none;
+      & p {
+        font-size: 18px;
+        color: black;
         text-decoration: none;
-      
-        width: 100%;
-        &_link{
-         
-           text-decoration: none;
-            & p {
-                font-size: 18px;
-                color: black;
-                text-decoration: none;
-                padding-bottom: 4rem;
-               
-              }
-              
-        }
-        &_content{
-           text-decoration: none;
-           
-        }
-        &_form{
+        padding-bottom: 4rem;
+     
         
-        }
-    
-        &_like{
-         font-size: 16px;
-            img{
-                height:1.5rem;
-            }
-            
-        }
+      }
     }
+    &_content {
+      text-decoration: none;
+    }
+
+    &_like {
+      font-size: 16px;
+      img {
+        height: 1.5rem;
+      }
+    }
+  }
 }

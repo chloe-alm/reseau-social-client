@@ -7,11 +7,12 @@ import PostPatch from "./postPatch";
 import Footer from "../../organisms/Footer/Footer";
 import imgtrois from "../../../assets/images/trois.png";
 import NavBar from "../../molecules/NavBar";
+import { useAlert } from 'react-alert';
 require("./_postDelete.scss");
 export function PostDelete({ post }) {
   const token = localStorage.getItem("token");
   const history = useHistory();
-
+  const alert = useAlert();
   const [deletePost, setDeletePost] = useState({
     content: post.content,
     like: post.like,
@@ -38,7 +39,7 @@ export function PostDelete({ post }) {
       console.log(result);
       if (result.status === 201) {
         console.log("delete", deletePost);
-        return history.push("/posts");
+        return alert.show("Post bien supprimé"),history.push("/posts");
       }
     } catch (error) {
       setDeletePost({
@@ -84,7 +85,7 @@ export function PostDelete({ post }) {
               <strong>Le contenu :</strong> {post.content}
             </div>
             <div className="container_OnePost_details_like">
-            <strong>Likes::</strong>  {post.like}
+            <strong>Likes:</strong>  {post.like}
             </div>
             
           </div>

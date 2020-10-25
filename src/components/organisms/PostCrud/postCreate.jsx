@@ -54,15 +54,19 @@ export default function PostCreate() {
         action="/posts"
         onSubmit={handleSubmit}
       >
+       
         <div className="container_postCreate_content">
           <p>Le contenu : </p>
-          <input
-            type="text"
+         
+          <textarea
+          type="text"
             name="content"
             id="content"
+            rows="10"
+            cols="20"
             value={createPost.content}
             onChange={handleChange}
-          ></input>
+          ></textarea>
         </div>
 
         <div className="container_postCreate_picture">
@@ -83,7 +87,7 @@ export default function PostCreate() {
           className="container_postCreate_button"
           onClick={handleSubmit}
         >
-          Creer
+          Créer
         </button>
       </form>
     </div>

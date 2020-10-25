@@ -12,14 +12,14 @@ import ListPost from "./components/pages/ListPosts/listPosts";
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
 import Footer from "./components/organisms/Footer/Footer";
-import { transitions, positions, Provider as AlertProvider } from 'react-alert';
-import AlertTemplate from 'react-alert-template-basic';
-
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+import { Contact } from "./components/pages/Contact/contact";
 
 function App() {
   const initialState = {
     isAuthenticated: false,
-    token:null,
+    token: null,
     user: null,
   };
 
@@ -45,43 +45,49 @@ function App() {
     };
     fetchUser();
   }, []);
-
+  const option = {
+    position: positions.TOP_CENTER,
+    timeout: 3000,
+    transition: transitions.SCALE,
+  };
   return (
-    <AlertProvider template={AlertTemplate} >
-    <AuthContext.Provider
-      value={{
-        state,
-        dispatch,
-      }}
-    >
-      <h1>Centre équestre de jablines</h1>
-      <Router>
-        {/* <Header /> */}
-        <Switch>
-          <Route exact path="/posts/:id">
-            <OnePost />
-          </Route>
-          <Route exact path="/posts">
-            <ListPost />
-          </Route>
-          {/* <Route exact path="/profil">
+    <AlertProvider template={AlertTemplate} {...option}>
+      <AuthContext.Provider
+        value={{
+          state,
+          dispatch,
+        }}
+      >
+        <h1>Centre équestre de jablines</h1>
+        <Router>
+          {/* <Header /> */}
+          <Switch>
+            <Route exact path="/posts/:id">
+              <OnePost />
+            </Route>
+            <Route exact path="/posts">
+              <ListPost />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            {/* <Route exact path="/profil">
             <Profil />
           </Route> */}
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-      {/* <Footer/> */}
-    </AuthContext.Provider>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+        {/* <Footer/> */}
+      </AuthContext.Provider>
     </AlertProvider>
-   
   );
 }
 

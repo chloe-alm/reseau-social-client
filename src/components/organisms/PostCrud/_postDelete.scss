@@ -1,4 +1,5 @@
 .container {
+  font-family: 'Lato', sans-serif;
   height: 100vh;
   &_titre {
     height: 10%;
@@ -41,7 +42,7 @@
       opacity: 0.8;
       //  float: right;
       &:hover {
-        background-color: #65d1b3;
+        background-color: rgb(249, 115, 85);
         opacity: 2;
       }
     }

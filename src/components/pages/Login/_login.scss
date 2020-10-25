@@ -1,5 +1,5 @@
 .ContainerLog {
-  // border:4px solid blue;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;
   align-items: center;
@@ -11,7 +11,7 @@
     color: #4a9e87;
     padding-bottom: 4rem;
     font-size: 24px;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    
     align-items: center;
   }
   &_content {
