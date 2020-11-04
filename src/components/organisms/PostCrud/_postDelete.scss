@@ -1,3 +1,4 @@
+@import '../../../config/mixin';
 .container {
   font-family: 'Lato', sans-serif;
   height: 100vh;
@@ -9,9 +10,17 @@
     height: 85%;
     margin: 30px 10px 10px 10px;
     &_image {
+      
       height: 40%;
       width: 100%;
       object-fit: cover;
+      @include media (desktop){
+        height: 60%;
+      width: 100%;
+      padding: 1.1rem;
+      
+      object-fit: cover;
+      }
     }
     &_details {
       height: 55%;
@@ -45,6 +54,23 @@
         background-color: rgb(249, 115, 85);
         opacity: 2;
       }
+      @include media (desktop){
+        color: #fff;
+      font-size: 14px;
+      background: #ed8e79;
+      font-style: italic;
+      border-radius: 10px;
+      width: 20rem;
+      // margin: 30px 5px;
+      // padding: 10px 30px;
+      cursor: pointer;
+      opacity: 0.8;
+      //  float: right;
+      &:hover {
+        background-color: rgb(249, 115, 85);
+        opacity: 2;
+      }
+      }
     }
     &_boutonModifier {
       color: #fff;
@@ -61,6 +87,42 @@
         background-color: #65d1b3;
         opacity: 2;
       }
+      @include media (desktop){
+        color: #fff;
+      font-size: 14px;
+      background: #067457;
+      font-style: italic;
+      border-radius: 10px;
+      // margin: 30px 5px;
+      // padding: 10px 30px;
+      cursor: pointer;
+      width: 20rem;
+      // opacity: 0.8;
+      float: right;
+      &:hover {
+        background-color: #65d1b3;
+        opacity: 2;
+      }
+      }
+    }
+    @include media (desktop){
+      
+      height: 100%;
+      color: #fff;
+      font-size: 14px;
+      background: #4a9e87;
+      
+      width: 30rem;
+      margin: 30px 5px 5px 460px;
+      padding: 10px 70px;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      
+     
+      
     }
   }
 }

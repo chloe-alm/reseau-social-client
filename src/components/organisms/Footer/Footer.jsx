@@ -30,7 +30,7 @@ export default function Footer(props) {
             </span>
           </a>
         </div>
-          <div>©2020 Centre équestre Jablines. Inc. tous droits réservés</div>
+          <div className="footer_droit">©2020 Centre équestre Jablines. Inc. tous droits réservés</div>
         
       </footer>
     </>

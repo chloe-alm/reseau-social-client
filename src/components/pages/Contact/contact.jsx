@@ -10,6 +10,7 @@ require("./_contact.scss");
 export function Contact(props) {
   const history = useHistory();
   const alert = useAlert();
+  
 
   const [mailSender, setMailSender] = useState({
     email: null,
@@ -39,6 +40,7 @@ export function Contact(props) {
         return alert.show("Message envoyé!"), history.push("./");
       }
     } catch (error) {
+     
       setMailSender({
         ...mailSender,
         isSubmitting: false,
@@ -100,7 +102,7 @@ export function Contact(props) {
 
         <div className="mailSender_erreur">{mailSender.errorMessage}</div>
         <button
-          className="mailSenter_bouton"
+          
           type="submit"
           name="Envoyer"
           onClick={handleSubmit}

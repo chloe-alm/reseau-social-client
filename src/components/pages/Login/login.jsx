@@ -8,15 +8,13 @@ import NavBar from "../../molecules/NavBar";
 
 import prairieCheval from "../../../assets/images/prairiecheval.png";
 import Footer from "../../organisms/Footer/Footer";
-import { useAlert } from 'react-alert';
+import { useAlert } from "react-alert";
 
 require("./_login.scss");
 
 export default function Login(props) {
   const { dispatch } = useContext(AuthContext);
-
   const history = useHistory();
-
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -25,8 +23,6 @@ export default function Login(props) {
   });
   const alert = useAlert();
   const [errorForm, setErrorForm] = useState(" ");
-  
-
   const handleChange = (event) => {
     setLogin({ ...login, [event.target.name]: event.target.value });
   };
@@ -40,7 +36,6 @@ export default function Login(props) {
         password: "",
         isSubmitting: true,
       });
-
       const result = await Axios({
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -48,16 +43,14 @@ export default function Login(props) {
         data: JSON.stringify(login),
       });
       if (result.status === 200) {
-        return(
-           dispatch({ type: "LOGIN", payload: result }),
-            history.push("./"),
-            alert.show("Vous êtes connecté")
+        return (
+          dispatch({ type: "LOGIN", payload: result }),
+          history.push("./"),
+          alert.show("Vous êtes connecté")
         );
-        // localStorage.setItem("token", res.data.token);
-        // setLogin({ email: "", password: "" });
       }
     } catch (error) {
-      console.log("error catch login", error.response);
+      setErrorForm(error.response.data.description);
       setLogin({
         ...login,
         isSubmitting: false,
@@ -108,19 +101,17 @@ export default function Login(props) {
         <button
           className="loginForm_bouton"
           type="submit"
-          
           onClick={handleSubmit}
         >
           Se connecter
         </button>
-        
       </form>
 
       <div class="loginForm_link">
         <a href="/">Mot de passe oublié ?</a> .
         <a href="/register">S'inscrire</a>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

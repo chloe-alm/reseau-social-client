@@ -1,3 +1,4 @@
+@import "../../config/mixin";
 .postCard {
   font-family: "Lato", sans-serif;
   border: black 1px solid;
@@ -5,6 +6,11 @@
   flex-direction: column;
   // margin: 3px 0px 0px 10px;
   padding: 1rem 1rem 1rem 1rem;
+  @include media(desktop) {
+    display: flex;
+    flex-direction: row;
+    margin:1.1rem;
+  }
 
   &_image {
     object-fit: cover;
@@ -25,10 +31,9 @@
   &_contenu {
     text-decoration: none;
     padding-block-start: 1rem;
-
-display: block;
+    display: block;
     width: 100%;
-    
+
     &_link {
       text-decoration: none;
       & p {
@@ -36,8 +41,6 @@ display: block;
         color: black;
         text-decoration: none;
         padding-bottom: 4rem;
-     
-        
       }
     }
     &_content {

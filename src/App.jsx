@@ -58,7 +58,7 @@ function App() {
           dispatch,
         }}
       >
-        <h1>Centre équestre de jablines</h1>
+        <h1>HorseField</h1>
         <Router>
           {/* <Header /> */}
           <Switch>

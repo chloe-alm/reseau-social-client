@@ -1,14 +1,21 @@
-@import '../../../scssConfig/mixin';
+@import '../../../config/mixin';
 
 .footer{
     font-family: 'Lato', sans-serif;
     height: 10vh;
-    padding-top:20px;
+    // padding-top:20px;
    &_reseaux{
         display: flex;
         justify-content: space-around;
         text-align: center;
-        padding-bottom:2rem;
+        padding-bottom:0.8rem;
+    }
+   
+    &_droit{
+       
+        align-items: center;
+        text-align: center;
+        margin: 1rem;
     }
     
 }

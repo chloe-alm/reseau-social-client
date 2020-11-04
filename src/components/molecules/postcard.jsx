@@ -15,11 +15,6 @@ export default function PostCard({ post }) {
     isSubmitting: false,
     errorMessage: null,
   });
-
-  // const handleChange = (event) => {
-  //   setCount({ ...count, [event.target.name]: event.target.value });
-  // };
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -36,10 +31,6 @@ export default function PostCard({ post }) {
         url: `http://localhost:8001/api/posts/${post.id}`,
         data: JSON.stringify(count),
       });
-      // if (result.status === 201) {
-      //   setCount(result.data.changedPost)
-
-      // }
     } catch (error) {
       setCount({
         isSubmitting: false,

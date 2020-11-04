@@ -34,6 +34,7 @@ export default function Onepost() {
   }, [id, token]);
   return (
     <>
+    
       <div className="post">
        
 

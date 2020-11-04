@@ -32,9 +32,11 @@ export default function NavBar() {
     return (
       <>
         <section className="navBar_connecter">
+        
           <Link className="navBar_connecter_link" to="/">
+          <p>Home</p>
             <button className="navBar_connecter_button">
-              <p>Home</p>
+            
               <img
                 className="navBar_connecter_button_logo"
                 src={logohome}
@@ -99,7 +101,7 @@ export default function NavBar() {
               alt="logo deconnexion"
             />
             <Link className="navBar_connecter_button_logo_link" to="/logout">
-              Logout
+              <p>Logout</p>
             </Link>
           </button>
         </section>
@@ -118,7 +120,7 @@ export default function NavBar() {
         </button>
         <button className="navBar_boutons_login media_phone">
           <Link className="navBar_link" to="/login">
-            Login
+            Se connecter
           </Link>
         </button>
       </div>

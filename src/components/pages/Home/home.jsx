@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
-import LoginBtn from "../../atomes/LoginBtn";
-import RegisterBtn from "../../atomes/RegisterBtn";
 import NavBar from "../../molecules/NavBar";
-import imagecentre from "../../../assets/images/centre.png";
 import "./_home.scss";
 import Footer from "../../organisms/Footer/Footer";
 import { AuthContext } from "../../../context/auth";

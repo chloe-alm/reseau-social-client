@@ -3,7 +3,7 @@ import Axios from "axios";
 import PostDelete from "../../organisms/PostCrud/postDelete";
 import { useHistory } from "react-router-dom";
 import NavBar from "../../molecules/NavBar";
-import horse from "../../../assets/images/horse.png";
+import horse from "../../../assets/images/chevalblanc.jpg";
 import Footer from "../Footer/Footer";
 import { useAlert } from 'react-alert';
 require("./_postPatch.scss");

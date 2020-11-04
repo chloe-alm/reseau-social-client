@@ -20,13 +20,7 @@ export default function Register(props) {
     country: "",
     picture: "",
   });
-
-  // const [redirect, setRedirect] = useState(
-  //     false
-  // )
-
   const [errorForm, setErrorForm] = useState(" ");
-
   const alert = useAlert();
 
   const handleChange = (event) => {
@@ -38,7 +32,6 @@ export default function Register(props) {
     console.log(register);
     Axios.post("http://localhost:8001/api/register", register)
       .then((res) => {
-        console.log("#666", res);
         setRegister({
           firstName: "",
           lastName: "",
@@ -49,16 +42,10 @@ export default function Register(props) {
           picture: "",
         });
         history.push("./login");
-        // setRedirect(true)
-        // props.setIsOpen(false)
         alert.show('Inscription validée!')
       })
       .catch((error) => {
-        console.log("#777", error.response);
         setErrorForm(error.response.data.description);
-        // return response.status(500).json({
-        //     'error': "Impossible de faire cela"
-        // })
       });
   };
 
