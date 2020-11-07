@@ -1,5 +1,6 @@
 @import '../../../config/mixin';
 .container {
+
   font-family: 'Lato', sans-serif;
   height: 100vh;
   &_titre {
@@ -29,6 +30,7 @@
         height: 84%;
       }
       &_like {
+      
         margin-top: 20px;
         height: 8%;
       }

@@ -75,18 +75,21 @@
         height: 5vh;
         width: 90vw;
         border-radius: 4px;
-        font-style: 'Roboto';
+        font-style: 'Lato';
         
        
       }
     }
   }
   &_erreur {
+    
     height: 2%;
     color: #e0245e;
     font-weight: normal;
+    justify-content: center;
   }
   &_button {
+    
     width: 90%;
 
     text-align: center;
@@ -98,8 +101,6 @@
     margin: 30px 5px;
     padding: 10px 30px;
     cursor: pointer;
-    // opacity: 0.8;
-    // float: right;
     &:hover {
       background-color: #65d1b3;
       opacity: 2;

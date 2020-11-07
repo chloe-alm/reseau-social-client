@@ -110,7 +110,7 @@ export default function PostPatch({ datapost }) {
       </form>
       
 
-      {/* <Footer/> */}
+     {/* <Footer/>  */}
     </div>
   );
 }
