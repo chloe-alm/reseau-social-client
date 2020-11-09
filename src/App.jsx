@@ -9,12 +9,14 @@ import Register from "./components/pages/Register/register";
 import OnePost from "./components/pages/OnePost/onePost";
 import ListPost from "./components/pages/ListPosts/listPosts";
 
+
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
 import Footer from "./components/organisms/Footer/Footer";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { Contact } from "./components/pages/Contact/contact";
+import { Notfound } from "./components/pages/NotFound/notFound";
 
 function App() {
   const initialState = {
@@ -62,6 +64,8 @@ function App() {
         <Router>
           {/* <Header /> */}
           <Switch>
+          
+
             <Route exact path="/posts/:id">
               <OnePost />
             </Route>
@@ -82,6 +86,9 @@ function App() {
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <Notfound />
             </Route>
           </Switch>
         </Router>

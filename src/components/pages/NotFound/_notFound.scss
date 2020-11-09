@@ -1,0 +1,15 @@
+@import "../../../config/mixin";
+
+.image404{
+   
+    object-fit: cover;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    & img{
+    height:100%;
+    width: 100%;
+    }
+    
+  
+}
