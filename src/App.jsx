@@ -26,7 +26,6 @@ function App() {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem("token");

@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 
   &_logo {
     padding-bottom: 1rem;
@@ -94,7 +95,7 @@
     object-fit: cover;
     @include media(desktop) {
       width: 11%;
-      height: 8vh;
+      height: 7vh;
       display: inline;
       display: flex;
       flex-direction: column-reverse;
@@ -111,12 +112,13 @@
       color: white;
       text-decoration: none;
       display: none;
+      font-size: 1.5rem;
       @include media(desktop) {
         text-decoration: none;
         display: inline;
 
         color: white;
-        height: 2.7rem;
+        height: 2.8rem;
         &:hover {
           color: #dab558;
         }
@@ -137,6 +139,7 @@
         background-color: #4a9e87;
         height: 8vh;
         display: none;
+        
       }
 
       &_link {
@@ -146,7 +149,8 @@
           display: inline;
           background-color: #4a9e87;
           color: white;
-          padding-right: 4rem;
+          padding-right: 8rem;
+          font-size: 1.3rem;
           &:hover {
             color: #dab558;
           }

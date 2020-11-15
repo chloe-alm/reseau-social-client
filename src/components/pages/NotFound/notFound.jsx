@@ -8,7 +8,7 @@ export function Notfound(props) {
 
     return (
         <>
-        <h2><strong>Oopsss</strong> Page 404 !!!!</h2>
+        <h2><strong>Oopsss</strong> Page 404 !!!!</h2><br></br>
         <NavBar/>
         <div className="image404">
         <img src={img404} alt="cheval 404" />

@@ -87,7 +87,7 @@ export default function Login(props) {
           />
         </div>
         <div className="loginForm_password">
-          <p>Password with 6 characters minimum, 1 capitale, 1 chiffre:</p>
+          <p>Password</p>
           <input
             type="password"
             name="password"

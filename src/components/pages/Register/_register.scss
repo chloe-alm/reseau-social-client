@@ -1,15 +1,17 @@
+@import '../../../config/mixin';
 .ContainerReg {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;
   align-items: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-size: 1.4rem;
 
   &_header {
     color: #4a9e87;
-    padding-bottom: 4rem;
+    padding-bottom:4rem;
     font-size: 24px;
    
     align-items: center;
@@ -17,9 +19,10 @@
   &_content {
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
 
     &_image {
+      object-fit: cover;
       width: 100%;
       padding-top: 2rem;
       & img {
@@ -30,30 +33,37 @@
   }
 }
 .registerForm{
-   
     padding-bottom: 3rem;
     width: 70vw;
     padding: 0 10vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     & div {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-bottom: 2rem;
         padding-top: 3rem;
+       
       }
       & div p {
         width: 60vw;
         text-align: center;
-        padding-bottom: 1rem;
+        padding-bottom: 0.8rem;
+      
+       
       }
       & div input {
+        
         height: 5vh;
         width: 60vw;
         border-radius: 4px;
+        font-size: 1.1rem;
+        @include media(desktop){
+          font-size: 1.4rem;
+        }
       }
       &_erreur {
         padding-top: 2%;
@@ -62,14 +72,14 @@
       }
       &_bouton {
         color: #fff;
-        font-size: 14px;
+        
         background: #4a9e87;
         font-style: italic;
+        font-size: 14px;
         border-radius: 10px;
         margin: 30px 5px;
         padding: 10px 30px;
         cursor: pointer;
-        // opacity: 0.8;
         float: right;
         &:hover {
           background-color: #65d1b3;

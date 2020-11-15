@@ -72,6 +72,7 @@ export default function Register(props) {
             type="text"
             name="firstName"
             id="firstName"
+            placeholder="Nom"
             value={register.firstName}
             onChange={handleChange}
             // required
@@ -83,6 +84,7 @@ export default function Register(props) {
               type="text"
               name="lastName"
               id="lastName"
+              placeholder="Prénom"
               value={register.lastName}
               onChange={handleChange}
               // required
@@ -94,20 +96,22 @@ export default function Register(props) {
               type="text"
               name="email"
               id="emailRegister"
+              placeholder="exemple@gmail.com"
               value={register.email}
               onChange={handleChange}
               // required
             />
           </div>
           <div className="registerForm_password">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password avec 6 characters minimum, 1 capitale, 1 chiffre</label>
             <input
               type="text"
               id="passRegister"
               name="password"
+              placeholder="Mot de passe"
               value={register.password}
               onChange={handleChange}
-              // required
+              
             />
           </div>
           <div className="registerForm_pays">
@@ -116,6 +120,7 @@ export default function Register(props) {
               type="text"
               name="country"
               id="country"
+              placeholder="pays"
               value={register.country}
               onChange={handleChange}
               // required
@@ -129,15 +134,16 @@ export default function Register(props) {
               id="birthday"
               value={register.birthday}
               onChange={handleChange}
-              // required
+             
             />
           </div>
           <div className="registerForm_picture">
-            <label htmlFor="picture">Photo</label>
+            <label htmlFor="picture">Photo Url </label>
             <input
               type="text"
               name="picture"
               id="picture"
+              placeholder="https://exemple.com"
               value={register.picture}
               onChange={handleChange}
               // required

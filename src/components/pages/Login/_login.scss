@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-size: 1.4rem;
 
   &_header {
     color: #4a9e87;
@@ -15,8 +16,6 @@
     align-items: center;
   }
   &_content {
-    // border: violet 4px solid;
-    // width: 100%;
     display: flex;
     flex-direction: column;
     padding-top: 3rem;
@@ -40,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   & div {
     display: flex;
     flex-direction: column;
@@ -51,12 +50,14 @@
   & div p {
     width: 60vw;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
   }
   & div input {
     height: 5vh;
     width: 60vw;
     border-radius: 4px;
+    font-size:1.1rem;
+   
   }
   &_erreur {
     padding-top: 2%;
@@ -72,7 +73,6 @@
     margin: 30px 5px;
     padding: 10px 30px;
     cursor: pointer;
-    // opacity: 0.8;
     float: right;
     &:hover {
       background-color: #65d1b3;

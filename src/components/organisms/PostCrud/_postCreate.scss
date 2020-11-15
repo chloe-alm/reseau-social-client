@@ -1,12 +1,14 @@
 @import "../../../config/mixin";
 .container {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 60vh;
   width: 100vw;
+
+ 
   
  
   &_postCreate {
-   
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +17,8 @@
     padding:3%;
    
     &_content {
-     
+   
+      
       @include media (desktop){
         width: 100%;
         display: flex;
@@ -25,11 +28,14 @@
        
       }      
       & textarea {
+        
         margin: 10px 0px 1rem;
         height: 10vh;
         width: 100%;
+        font-size: 1.4rem;
         border-radius: 4px;
-        font-style: 'Roboto';
+        font-style: 'Roboto',sans-serif;
+        
        
         
         
@@ -41,6 +47,7 @@
         height: 5vh;
         width: 100%;
         border-radius: 4px;
+        font-size: 1.3rem;
        
       }
     }

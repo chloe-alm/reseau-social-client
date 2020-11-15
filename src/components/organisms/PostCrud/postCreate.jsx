@@ -63,18 +63,20 @@ export default function PostCreate() {
             name="content"
             id="content"
             rows="10"
-            cols="20"
+            cols="10"
+            placeholder="texte"
             value={createPost.content}
             onChange={handleChange}
           ></textarea>
         </div>
 
         <div className="container_postCreate_picture">
-          <p>Photos url: </p>
+          <p>Photos mettre une Url: </p>
           <input
             type="text"
             name="picture"
             id="picture"
+            placeholder="https://example.com"
             value={createPost.picture}
             onChange={handleChange}
           ></input>

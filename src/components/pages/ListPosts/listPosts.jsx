@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import Axios from "axios";
-// import { Link, Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import PostCard from "../../molecules/postcard";
-
-
 import NavBar from "../../molecules/NavBar";
 import PostCreate from "../../organisms/PostCrud/postCreate";
 import PostDelete from "../../organisms/PostCrud/postDelete";
-
 require("./_listPosts.scss");
 
 export default function Listposts(props) {
   const token = localStorage.getItem("token");
-
   const [list, setList] = useState([]);
   const [errorForm, setErrorForm] = useState(" ");
 
