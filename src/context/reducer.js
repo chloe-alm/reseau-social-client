@@ -4,11 +4,13 @@ const reducer = (state, action) => {
     case "LOGIN":
       localStorage.setItem("token", action.payload.data.token);
       localStorage.setItem("user", action.payload.data.user.id);
+      localStorage.setItem("isAdmin",action.payload.data.user.isAdmin);
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload.data.token,
         user: action.payload.data.user,
+        isAdmin:action.payload.data.user.isAdmin,
       };
     case "LOGOUT":
       localStorage.clear();
@@ -22,6 +24,9 @@ const reducer = (state, action) => {
         ...state,
         isAuthenticated: true,
         user: action.payload,
+        token: action.payload.token,
+        isAdmin: action.payload.isAdmin,
+       
       };
     default:
       return state;

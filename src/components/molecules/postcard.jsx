@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import poucelike from "../../assets/images/poucelike.png";
 import PostPatch from "../organisms/PostCrud/postPatch";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import Footer from "../organisms/Footer/Footer";
-// import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/auth";
 require("./_postcard.scss");
 
 export default function PostCard({ post }) {
   const token = localStorage.getItem("token");
+  const { state } = useContext(AuthContext);
   const [count, setCount] = useState({
     like: post.like,
     isSubmitting: false,
@@ -53,19 +55,19 @@ export default function PostCard({ post }) {
         </Link>
     
 
-        <form
-          className="postCard_contenu_form"
-          method="PATCH"
-          action="/posts"
-          onSubmit={handleSubmit}
-        >
+       <form
+        className="postCard_contenu_form"
+        method="PATCH"
+        action="/posts"
+        onSubmit={handleSubmit}
+      >
 
-          <button type="submit" className="postCard_contenu_like" onClick={handleSubmit}>
-          {count.like} <img 
-          src={poucelike} 
-          alt="image du like"/>
-          </button>
-        </form>
+        <button type="submit" className="postCard_contenu_like" onClick={handleSubmit}>
+        {count.like} <img 
+        src={poucelike} 
+        alt="image du like"/>
+        </button>
+      </form>
       </div>
       
     </div>

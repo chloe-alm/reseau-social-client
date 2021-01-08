@@ -22,21 +22,18 @@ export default function NavBar() {
     localStorage.clear();
     window.location.href = "/";
   };
-
   useEffect(() => {
     state.user && console.log(state.user.firstName);
     return () => {};
   }, [state]);
-
+  console.log("NAVBAR STATE",state)
   if (state.isAuthenticated === true) {
     return (
       <>
         <section className="navBar_connecter">
-        
           <Link className="navBar_connecter_link" to="/">
           <p>Home</p>
             <button className="navBar_connecter_button">
-            
               <img
                 className="navBar_connecter_button_logo"
                 src={logohome}
@@ -44,9 +41,10 @@ export default function NavBar() {
               />
             </button>
           </Link>
-
-          <Link className="navBar_connecter_link" to="/posts">
-            <p>Post</p>
+          {
+            state.isAdmin ?(
+              <Link className="navBar_connecter_link" to="/posts">
+            <p>Events</p>
             <button className="navBar_connecter_button">
               <img
                 className="navBar_connecter_button_logo"
@@ -55,6 +53,10 @@ export default function NavBar() {
               />
             </button>
           </Link>
+            ):(  <div></div>
+            )
+          }
+         
 
           <Link className="navBar_connecter_link" to="/posts">
             <p>Liste Post</p>

@@ -120,15 +120,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   @include media (desktop){
     padding-bottom: 3rem;
-  width: 70vw;
+    font-size: 1rem;
+    width: 70vw;
  
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   }
   &_email {
     display: flex;
@@ -136,9 +137,18 @@
     align-items: center;
     padding-bottom: 2rem;
     padding-top: 3rem;
+    font-size: 1rem;
+    @include media (desktop){
+    
+      font-size: 1rem;
+    }
     & p{
-       
+        font-size: 1rem;
         padding-bottom: 0.5rem;
+        @include media (desktop){
+         
+          font-size: 1.2rem;
+        }
     }
   }
   
@@ -146,17 +156,27 @@
     width: 60vw;
     text-align: center;
     padding-bottom: 1rem;
+    font-size: 1rem;
+    @include media (desktop){
+         
+      font-size: 1.2rem;
+    }
     & p{
-       
+      font-size: 1rem;
         padding-bottom: 0.5rem;
+        @include media (desktop){
+         
+          font-size: 1.2rem;
+        }
     }
   }
   & div input {
     height: 5vh;
     width: 60vw;
     border-radius: 4px;
+    font-size: 1rem;
     @include media (desktop){
-    
+      font-size: 1.2rem;
       height: 5vh;
     width: 50vw;
     }
@@ -165,21 +185,26 @@
     width: 60vw;
     text-align: center;
     padding-bottom: 1rem;
+    font-size: 1rem;
     @include media (desktop){
-      
-      height: 5vh;
-    width: 50vw;
+      height: 20vh;
+      width: 50vw;
+      font-size: 1.2rem;
     }
    
   }
-  
   & textarea{
-  
     margin: 10px 0px 1rem;
     height: 20vh;
     width: 100%;
     border-radius: 4px;
     font-style: 'Roboto';
+    font-size: 1.2rem;
+  
+    @include media (desktop){
+         
+      font-size: 1.3rem;
+    }
   }
   &_erreur {
      

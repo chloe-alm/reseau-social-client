@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import PostPatch from "./postPatch";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/auth";
 import Footer from "../../organisms/Footer/Footer";
 import imgtrois from "../../../assets/images/trois.png";
 import NavBar from "../../molecules/NavBar";
@@ -11,6 +13,7 @@ import { useAlert } from 'react-alert';
 require("./_postDelete.scss");
 export function PostDelete({ post }) {
   const token = localStorage.getItem("token");
+  const { state } = useContext(AuthContext);
   const history = useHistory();
   const alert = useAlert();
   const [deletePost, setDeletePost] = useState({
@@ -49,6 +52,8 @@ export function PostDelete({ post }) {
       });
     }
   };
+  console.log("STATE",state.user)
+  console.log("POSTTT",post.userId)
   let [testModifie, setTestModifie] = useState(false);
   const redirectModif = () => {
     setTestModifie(true);
@@ -87,30 +92,38 @@ export function PostDelete({ post }) {
             <div className="container_OnePost_details_like">
             <strong>Likes:</strong>  {post.like}
             </div>
-            
+           
           </div>
 
-          <div className="container_OnePost_erreur">
+          
+          
+          {
+            
+            state.user.id === post.userId ? (
+              <div>
+                <div className="container_OnePost_erreur">
             {deletePost.errorMessage}
           </div>
-          
-         
+              <button
+              type="submit"
+              className="container_OnePost_boutonSupprimer"
+              onClick={handleSubmit}
+            >
+              Supprimer
+            </button>
+    
           <button
-            type="submit"
-            className="container_OnePost_boutonSupprimer"
-            onClick={handleSubmit}
+            type="button"
+            className="container_OnePost_boutonModifier"
+            onClick={redirectModif}
           >
-            Supprimer
+            Modifier
           </button>
-        
-        <button
-          type="button"
-          className="container_OnePost_boutonModifier"
-          onClick={redirectModif}
-        >
-          Modifier
-        </button>
-        
+          </div>
+            ):(<div></div>)
+            
+            }
+          
         </form>
       
       </div>

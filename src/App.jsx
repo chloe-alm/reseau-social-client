@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/pages/Home/home";
 import Login from "./components/pages/Login/login";
-// import { Profil } from "./components/pages/Profil/profil";
+import { Profil } from "./components/pages/Profil/profil";
 import Register from "./components/pages/Register/register";
 import OnePost from "./components/pages/OnePost/onePost";
 import ListPost from "./components/pages/ListPosts/listPosts";
@@ -23,6 +23,7 @@ function App() {
     isAuthenticated: false,
     token: null,
     user: null,
+    isAdmin:null,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -36,7 +37,6 @@ function App() {
           },
         });
         if (result.status === 200) {
-          console.log("dispatch app.js ==>", result.data);
           dispatch({
             type: "LOAD_USER",
             payload: result.data,
@@ -51,6 +51,8 @@ function App() {
     timeout: 3000,
     transition: transitions.SCALE,
   };
+  console.log(state)
+  console.log(AuthContext.state)
   return (
     <AlertProvider template={AlertTemplate} {...option}>
       <AuthContext.Provider
@@ -74,9 +76,9 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
-            {/* <Route exact path="/profil">
+            <Route exact path="/profil">
             <Profil />
-          </Route> */}
+          </Route>
             <Route exact path="/login">
               <Login />
             </Route>
