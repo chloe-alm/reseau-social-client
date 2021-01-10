@@ -9,7 +9,7 @@ export default function Onepost() {
   const token = localStorage.getItem("token");
   let { id } = useParams();
 
-  let [post, setPost] = useState({});
+  let [onePost, setOnePost] = useState({});
   const [errorForm, setErrorForm] = useState(" ");
 
   useEffect(() => {
@@ -24,21 +24,22 @@ export default function Onepost() {
           url: `http://localhost:8001/api/posts/${id}`,
         });
         if (result.data) {
-          setPost(result.data.post);
+          setOnePost(result.data.post);
         }
       } catch (error) {
-        setErrorForm(error);
+        console.log("error",error)
+        // setErrorForm(error);
       }
     };
     fetchData();
-  }, [id, token]);
+  }, [token]);
   return (
     <>
     
       <div className="post">
        
 
-        <PostDelete post={post} />
+        <PostDelete post={onePost} />
       </div>
     </>
   );

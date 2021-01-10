@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import imagecentre from "../../assets/images/centre.png";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth";
 import { useEffect } from "react";
@@ -12,7 +11,7 @@ import profil from "../../assets/images/user.png";
 import contact from "../../assets/images/email.png";
 import logout from "../../assets/images/logout.png";
 import post from "../../assets/images/post.png";
-import iconemail from "../../assets/images/iconmail.png";
+
 require("./_navBar.scss");
 
 export default function NavBar() {
@@ -26,7 +25,6 @@ export default function NavBar() {
     state.user && console.log(state.user.firstName);
     return () => {};
   }, [state]);
-  console.log("NAVBAR STATE",state)
   if (state.isAuthenticated === true) {
     return (
       <>

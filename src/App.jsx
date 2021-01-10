@@ -8,8 +8,6 @@ import { Profil } from "./components/pages/Profil/profil";
 import Register from "./components/pages/Register/register";
 import OnePost from "./components/pages/OnePost/onePost";
 import ListPost from "./components/pages/ListPosts/listPosts";
-
-
 import { AuthContext } from "./context/auth";
 import reducer from "./context/reducer";
 import Footer from "./components/organisms/Footer/Footer";

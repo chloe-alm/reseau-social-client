@@ -1,0 +1,22 @@
+@import "../../../config/mixin";
+
+.listEvent {
+  height: 30%;
+  width: 100vw;
+
+  margin: 8% 0%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media(desktop) {
+    height: 30vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow : scroll;
+    margin: 0% 0%;
+  }
+}

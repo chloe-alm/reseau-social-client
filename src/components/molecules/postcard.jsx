@@ -30,7 +30,7 @@ export default function PostCard({ post }) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: `http://localhost:8001/api/posts/${post.id}`,
+        url: `http://localhost:8001/api/posts-like/${post.id}`,
         data: JSON.stringify(count),
       });
     } catch (error) {

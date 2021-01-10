@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
@@ -23,6 +23,7 @@ export function PostDelete({ post }) {
     isSubmitting: false,
     errorMessage: null,
   });
+ 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -52,6 +53,7 @@ export function PostDelete({ post }) {
       });
     }
   };
+console.log("POSTLIKE",post.like)
   console.log("STATE",state.user)
   console.log("POSTTT",post.userId)
   let [testModifie, setTestModifie] = useState(false);

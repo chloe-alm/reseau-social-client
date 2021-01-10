@@ -1,0 +1,58 @@
+@import "../../config/mixin";
+.postCardEvent {
+  width: 100%;
+  height: 100%;
+
+  border: solid 0.4px #4a9e88b7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 5px #617e769a;
+
+  margin-bottom: 8%;
+  padding: 0% 4%;
+
+  background: url("../../assets/images/fontEvent.jpg"), rgb(135, 216, 135);
+  background-size: 110%;
+  background-repeat: no-repeat;
+
+  &_link {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    &_title {
+      height: 20%;
+      font-size: 2rem;
+      font-weight: 800;
+      padding-bottom: 4%;
+      @include media(desktop) {
+        height: 50%;
+        // border: solid blue;
+      }
+    }
+    &_content {
+      //   height: 80%;
+      font-size: 1.1rem;
+      padding-bottom: 8%;
+      padding-top: 10%;
+      color: black;
+    }
+    @include media(desktop) {
+      //   height: 60%;
+      width: 100%;
+      padding: 4% 0%;
+      //   border: solid red;
+    }
+  }
+  @include media(desktop) {
+    display: flex;
+    flex-direction: column;
+
+    width: 30vw;
+    height: 30vh;
+    margin-bottom: 0%;
+    padding: 0% 8% 4% 8%;
+  }
+}
