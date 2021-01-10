@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
@@ -6,24 +6,27 @@ import { useAlert } from "react-alert";
 import NavBar from "../../molecules/NavBar";
 import PostCard from "../../molecules/postcard";
 import Footer from "../../organisms/Footer/Footer";
+import { AuthContext } from "../../../context/auth";
 
 require("./_profil.scss");
 
 export function Profil(props) {
   const token = localStorage.getItem("token");
   const user = localStorage.getItem("user");
+  const { state } = useContext(AuthContext);
   const [list, setList] = useState([]);
   const [errorForm, setErrorForm] = useState(" ");
   const alert = useAlert();
   let { id } = useParams();
 
-  let [infoUser, setInfoUser] = useState({
+  const [infoUser, setInfoUser] = useState({
     firstName: "",
     lastName: "",
     email: "",
     isSubmitting: false,
     errorMessage: null,
   });
+  console.log("user",infoUser)
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -121,8 +124,13 @@ export function Profil(props) {
     <div className="containerProfil">
      < NavBar />
       <h2 className="containerProfil_titre">Modification du profil</h2>
-
-      <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
+      <p>NOM:{state.user && state.user.firstName} <br></br>
+      PRENOM:{state.user && state.user.lastName}<br></br>
+      Email:{state.user && state.user.email}<br></br>
+      Country:{state.user && state.user.country}<br></br>
+    
+      </p>
+      {/* <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
         <p>Prénom :</p>
         <input
           type="text"
@@ -148,22 +156,23 @@ export function Profil(props) {
           id="email"
           value={infoUser.email}
           onChange={handleChange}
-        ></input>
+        ></input> */}
         <p>{infoUser.errorMessage}</p>
-        <button
+       <Link to={`/register/${user}`}> <button
           type="button"
           className="containerProfil_boutonModifier"
-          onClick={redirectModif}
+        
         >
           Modifier
         </button>
-        <button
+        </Link>
+        {/* <button
           type="submit"
           className="containerProfil_boutonSupprimer"
           onClick={handleSubmit}
         >
           Supprimer
-        </button>
+        </button> */}
 
         <h2 className="containerProfil_titrePost">Mes posts :</h2>
         {list.map((post) => {
@@ -173,7 +182,7 @@ export function Profil(props) {
             </div>
           );
         })}
-      </form>
+      {/* </form> */}
       {/* <Footer/> */}
     </div>
   );

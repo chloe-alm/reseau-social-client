@@ -1,6 +1,9 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import CardEvent from "../../molecules/cardEvent";
+import NavBar from "../../molecules/NavBar";
+import Footer from "../Footer/Footer";
 require("../../pages/ListPosts/listPosts");
 require("../ListEvent/_listEvent.scss");
 
@@ -34,16 +37,19 @@ export default function ListEvent() {
   }, [token]);
   return (
     <div>
+     
       <div className="listEvent">
         {listEvent.map((event) => {
           return (
-            <div>
+           <div>
               <CardEvent event={event} key={event.id} />
             </div>
+           
           );
         })}
       </div>
       <div className="containerList_erreur">{errorForm}</div>
+     
     </div>
   );
 }

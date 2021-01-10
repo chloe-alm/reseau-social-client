@@ -53,7 +53,7 @@ export default function Profil(props) {
   return (
     <div className="containerProfil">
      < NavBar />
-      <h2 className="containerProfil_titre">Modification du profil</h2>
+      <h2 className="containerProfil_titre">Modification de l evenement</h2>
 
       <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
         <p>Prénom :</p>

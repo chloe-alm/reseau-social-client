@@ -15,7 +15,9 @@ import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { Contact } from "./components/pages/Contact/contact";
 import { Notfound } from "./components/pages/NotFound/notFound";
-
+import UserPatch from "./components/organisms/UserCrud/userPatch";
+import EventPatch from "./components/organisms/EventPatch/eventPatch";
+import ListEvent from "./components/organisms/ListEvent/listEvent";
 function App() {
   const initialState = {
     isAuthenticated: false,
@@ -80,8 +82,17 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
+            <Route exact path="/events/:id">
+              <EventPatch />
+            </Route>
+            <Route exact path="/events">
+              <ListEvent />
+            </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route exact path="/register/:id">
+              <UserPatch />
             </Route>
             <Route exact path="/">
               <Home />

@@ -41,7 +41,7 @@ export default function NavBar() {
           </Link>
           {
             state.isAdmin ?(
-              <Link className="navBar_connecter_link" to="/posts">
+              <Link className="navBar_connecter_link" to="/events">
             <p>Events</p>
             <button className="navBar_connecter_button">
               <img
