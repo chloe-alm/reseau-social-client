@@ -1,0 +1,68 @@
+@import "../../../config/mixin";
+
+.containerEvent{
+    font-family: "Roboto", sans-serif;
+   height: 100vh;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+   
+   &_titre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    font-size: 1rem;
+    
+    
+    }
+    
+    
+   &_contenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    font-size: 1rem;
+   }
+    
+   &_hashtag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    font-size: 1rem;
+   }
+    
+
+  
+        
+        &_bouton{
+            width: 93%;
+
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            background: #4c5250;
+            font-style: italic;
+            border-radius: 10px;
+            margin: 30px 5px;
+            padding: 10px 30px;
+            cursor: pointer;
+            &:hover {
+              background-color: #65d1b3;
+              opacity: 2;
+            }
+
+        }
+        &_titrePost{
+            padding-bottom: 2rem;
+        }
+
+    }

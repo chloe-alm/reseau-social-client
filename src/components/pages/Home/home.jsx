@@ -4,7 +4,6 @@ import "./_home.scss";
 import Footer from "../../organisms/Footer/Footer";
 import { AuthContext } from "../../../context/auth";
 import cheval from "../../../assets/images/cheval.png";
-import Slide from  "../../molecules/Slide";
 import ListEvent from  "../../organisms/ListEvent/listEvent";
 
 

@@ -26,7 +26,7 @@ export function Profil(props) {
     isSubmitting: false,
     errorMessage: null,
   });
-  console.log("user",infoUser)
+  
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -122,57 +122,24 @@ export function Profil(props) {
 
   return (
     <div className="containerProfil">
-     < NavBar />
-      <h2 className="containerProfil_titre">Modification du profil</h2>
-      <p>NOM:{state.user && state.user.firstName} <br></br>
-      PRENOM:{state.user && state.user.lastName}<br></br>
-      Email:{state.user && state.user.email}<br></br>
-      Country:{state.user && state.user.country}<br></br>
+     < NavBar /><br></br>
+      <h2 className="containerProfil_titre">Informations du profil</h2>
+      <p className="containerProfil_para"> 
+      Nom:{state.user && state.user.firstName} <br></br>
+      Prénom: {state.user && state.user.lastName}<br></br>
+      Email: {state.user && state.user.email}<br></br>
+      Country: {state.user && state.user.country}<br></br>
     
       </p>
-      {/* <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
-        <p>Prénom :</p>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          value={infoUser.firstName}
-          onChange={handleChange}
-        ></input>
-
-        <p>Nom :</p>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          value={infoUser.lastName}
-          onChange={handleChange}
-        ></input>
-
-        <p>Email :</p>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={infoUser.email}
-          onChange={handleChange}
-        ></input> */}
-        <p>{infoUser.errorMessage}</p>
+        {/* <p>{infoUser.errorMessage}</p> */}
        <Link to={`/register/${user}`}> <button
           type="button"
-          className="containerProfil_boutonModifier"
+          className="containerProfil_bouton"
         
         >
           Modifier
         </button>
         </Link>
-        {/* <button
-          type="submit"
-          className="containerProfil_boutonSupprimer"
-          onClick={handleSubmit}
-        >
-          Supprimer
-        </button> */}
 
         <h2 className="containerProfil_titrePost">Mes posts :</h2>
         {list.map((post) => {

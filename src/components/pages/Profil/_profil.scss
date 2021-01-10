@@ -1,0 +1,40 @@
+@import "../../../config/mixin";
+
+.containerProfil{
+ 
+    width: 100vw;
+    &_titre {
+        
+          
+        }
+    &_para {
+  
+           width: 100vw;
+           display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+        &_bouton {
+  
+        color: #fff;
+        font-size: 14px;
+        background: #4a9e87;
+        font-style: italic;
+        border-radius: 10px;
+        // margin: 30px 5px;
+        padding: 10px 30px;
+        cursor: pointer;
+        opacity: 0.8;
+            // float: right;
+        &:hover {
+         background-color: #65d1b3;
+        opacity: 2;
+            }
+          }
+  
+        &_titrePost{
+            padding-bottom: 2rem;
+        }
+    }

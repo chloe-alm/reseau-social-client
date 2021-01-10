@@ -107,7 +107,7 @@ export default function Login(props) {
         </button>
       </form>
 
-      <div class="loginForm_link">
+      <div className="loginForm_link">
         <a href="/">Mot de passe oublié ?</a> .
         <a href="/register">S'inscrire</a>
       </div>

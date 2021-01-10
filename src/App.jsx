@@ -16,7 +16,7 @@ import AlertTemplate from "react-alert-template-basic";
 import { Contact } from "./components/pages/Contact/contact";
 import { Notfound } from "./components/pages/NotFound/notFound";
 import UserPatch from "./components/organisms/UserCrud/userPatch";
-import EventPatch from "./components/organisms/EventPatch/eventPatch";
+import EventPatch from "./components/organisms/EventPatch/EventPatch";
 import ListEvent from "./components/organisms/ListEvent/listEvent";
 function App() {
   const initialState = {

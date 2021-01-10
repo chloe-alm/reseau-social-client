@@ -38,6 +38,7 @@ export default function Profil(props) {
         url: `http://localhost:8001/api/register/${user}`,
         data: JSON.stringify(updateUser),
       });
+      alert.show('Profil bien modifié!')
     }
     catch (error) {
       setUpdateUser({

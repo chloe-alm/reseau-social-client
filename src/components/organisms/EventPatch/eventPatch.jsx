@@ -1,47 +1,60 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 import { useAlert } from "react-alert";
 import NavBar from "../../molecules/NavBar";
 import PostCard from "../../molecules/postcard";
-import Footer from "../../organisms/Footer/Footer";
+import Footer from "../Footer/Footer";
 
-// require("../");
+require("../EventPatch/_eventPatch.scss");
 
 
 
-export default function Profil(props) {
+export default function EventPatch(props) {
   const token = localStorage.getItem("token");
   const alert = useAlert();
   const user = localStorage.getItem("user");
+  const { id } = useParams();
+  const history = useHistory();
 
-  const [updateUser, setUpdateUser] = useState(
-   []
-  );
+  const [updateEvent, setUpdateEvent] = useState({
+     title:"",
+     content:"",
+     hashtag:"",
+     isSubmitting: false,
+     errorMessage: null,
+
+
+  });
+ console.log(updateEvent)
   const handleChange = (event) => {
-    setUpdateUser({ ...updateUser, [event.target.name]: event.target.value });
+    setUpdateEvent({ ...updateEvent, [event.target.name]: event.target.value });
   };
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      setUpdateUser({
-        ...updateUser,
+      setUpdateEvent({
+        ...updateEvent,
         isSubmittting: true,
       });
-      const result = await Axios({
+       await Axios({
         method: "patch",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: `http://localhost:8001/api/register/${user}`,
-        data: JSON.stringify(updateUser),
+        url: `http://localhost:8001/api/events/${id}`,
+        data: JSON.stringify(updateEvent),
+        
       });
+      
+      history.push("./");
+      alert.show('Evenement modifié!')
     }
     catch (error) {
-      setUpdateUser({
-        ...updateUser,
+      setUpdateEvent({
+        ...updateEvent,
         isSubmitting: false,
         errorMessage: error.response.data.description,
       });
@@ -51,41 +64,41 @@ export default function Profil(props) {
 
 
   return (
-    <div className="containerProfil">
-     < NavBar />
-      <h2 className="containerProfil_titre">Modification de l evenement</h2>
+    <div className="containerEvent">
+     < NavBar /><br></br><br></br>
+      <h2>Modification de l'évenement</h2><br></br>
 
-      <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
-        <p>Prénom :</p>
-        <input
+      <form method="PATCH" action="/events" onSubmit={handleSubmit}>
+        <p className="containerEvent_titre">Titre :</p>
+        <textarea
           type="text"
-          name="firstName"
-          id="firstName"
-          value={updateUser.firstName}
+          name="title"
+          id="title"
+          value={updateEvent.title}
           onChange={handleChange}
-        ></input>
+        ></textarea>
 
-        <p>Nom :</p>
-        <input
+        <p className="containerEvent_contenu">Contenue :</p>
+        <textarea
           type="text"
-          name="lastName"
-          id="lastName"
-          value={updateUser.lastName}
+          name="content"
+          id="content"
+          value={updateEvent.content}
           onChange={handleChange}
-        ></input>
+        ></textarea>
 
-        <p>Email :</p>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={updateUser.email}
+        <p className="containerEvent_hashtag">hashtag :</p>
+        <textarea
+          type="text"
+          name="hashtag"
+          id="hashtag"
+          value={updateEvent.hashtag}
           onChange={handleChange}
-        ></input>
-        <p>{updateUser.errorMessage}</p>
+        ></textarea>
+        <p>{updateEvent.errorMessage}</p>
         <button
           type="button"
-          className="containerProfil_boutonModifier"
+          className="containerEvent_bouton"
           onClick={handleSubmit}
         >
           Envoyer

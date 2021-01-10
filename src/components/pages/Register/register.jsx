@@ -16,7 +16,6 @@ export default function Register(props) {
     lastName: "",
     email: "",
     password: "",
-    birthday: "",
     country: "",
     picture: "",
   });
@@ -29,7 +28,6 @@ export default function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(register);
     Axios.post("http://localhost:8001/api/register", register)
       .then((res) => {
         setRegister({
@@ -37,10 +35,10 @@ export default function Register(props) {
           lastName: "",
           email: "",
           password: "",
-          birthday: "",
           country: "",
           picture: "",
         });
+        
         history.push("./login");
         alert.show('Inscription validée!')
       })
@@ -126,7 +124,7 @@ export default function Register(props) {
               // required
             />
           </div>
-          <div className="registerForm_date">
+          {/* <div className="registerForm_date">
             <label htmlFor="birthday">Birthday</label>
             <input
               type="date"
@@ -135,8 +133,8 @@ export default function Register(props) {
               value={register.birthday}
               onChange={handleChange}
              
-            />
-          </div>
+            /> */}
+          {/* </div> */}
           <div className="registerForm_picture">
             <label htmlFor="picture">Photo Url </label>
             <input
