@@ -1,69 +1,122 @@
 @import "../../config/mixin";
 .postCard {
- 
+  width: 90vw;
+
   font-family: "Lato", sans-serif;
-  border: black 1px solid;
+  border: #4a9e8886 4px solid;
+  border-radius: 6px;
+  background-color: #8bada459;
+
+  margin-bottom: 8%;
+  padding: 2%;
+
   display: flex;
-  flex-direction: column;
-  padding: 1rem 1rem 1rem 1rem;
+  flex-direction: row;
+
   @include media(desktop) {
+    width: 25vw;
+    height: auto;
+    margin: 5% 2vw;
+    // overflow: hidden;
+  }
+
+  &_info {
+    width:30%;
+    padding:3%;
     display: flex;
-    flex-direction: row;
-    margin:1.1rem;
-  }
-
-  &_image {
-    
-    object-fit: cover;
-    width: 100%;
-    
-    @include media(desktop){
-      object-fit: cover;
-      padding-right: 3rem;
-      width: 60%;
-    }
-    
-
-    & img {
-      max-width: 100%;
-      min-height: 100%;
-    }
-  }
-  &_link {
-    a {
-      color: black;
-      text-decoration: none;
-      padding-bottom: 4rem;
-    }
-  }
-  &_contenu {
-    text-decoration: none;
-    padding-block-start: 1rem;
-    display: block;
-    width: 100%;
+    flex-direction: column;
 
     &_link {
+      color: black;
       text-decoration: none;
-      & p {
-        font-size: 18px;
-        color: black;
-        text-decoration: none;
-        padding-bottom: 4rem;
-        padding-left: 0.2rem;
+
+      &_circle{
+        width: 60px;
+        height:60px;
+        border-radius: 50%;
+        background-color: #8bada4ea;
+        border: solid 1px #4a9e8886 ;
+
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #29584c;
+
+        padding-top: 0.8rem;
+        margin-bottom: 1.5rem;
       }
     }
-    &_content {
+  }
+  
+  &_contenu {
+    width:70%;
+    padding:3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_link {
+      color: black;
       text-decoration: none;
-      padding-left: 1rem;
+      border: solid 1px #4a9e8886 ;
+      border-radius: 6px;
+      padding: 6%;
+
+
+      & p {
+        font-size: 1rem;
+        text-align: justify;
+        @include media(desktop) {
+          font-size: 1.1rem;
+        }
+      }
     }
 
-    &_like {
-      padding-left: 0.4rem;
-      font-size: 16px;
-      img {
-        
-        height: 1.5rem;
+    &_bottom{
+      padding:3%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      &_hashtag{
+        font-style:italic;
+        font-size: 1rem;
+        color: #10272186;
+        @include media(desktop) {
+          font-size: 1.1rem;
+        }
       }
+      &_form{
+
+        &_like {
+          font-size: 16px;
+          border:none;
+          border-radius: 6px;
+          background-color: #8bada400;
+
+          display:flex;
+          flex-direction: row;
+          align-items: center;
+          & p{
+            padding-top: 1px;
+            color:#1c3f36;
+          }
+          img {
+            height: 1.5rem;
+            margin-left: 6px;
+            &:hover{
+              background-color: #b2c5c1a2;
+            }
+          }
+          &:hover{
+            background-color: #7f948f65;
+            border: solid #7f948f65;
+          }
+        }
+      }
+
     }
   }
 }

@@ -2,25 +2,47 @@
 .container {
   font-family: "Roboto", sans-serif;
   height: 60vh;
-  width: 100vw;
+  // width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
- 
-  
- 
   &_postCreate {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     height: 50vh;
-    width: 100vw;
+    width: 93vw;
+
     padding:3%;
-   
-    &_content {
-   
-      
+
+    @include media (desktop){
+      width: 50vw;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    & div>input {
+      width:90%;
       @include media (desktop){
-        
+        width: 70%;
+      }
+    }
+    & div>textarea{
+      width: 90%;
+      @include media (desktop){
+        width: 70%;
+      }
+    }
+
+
+    &_content {
+    
+      @include media (desktop){
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -29,27 +51,22 @@
        
       }      
       & textarea {
-        
         margin: 10px 0px 1rem;
         height: 10vh;
         width: 100%;
-        font-size: 1.4rem;
-        border-radius: 4px;
+        font-size: 15px;
+        border-radius: 6px;
         font-style: 'Roboto',sans-serif;
-        
-       
-        
-        
+ 
       }
     }
-    &_picture {
+    &_hashtag {
       & input {
         margin: 10px 0px 1rem;
         height: 5vh;
         width: 100%;
-        border-radius: 4px;
-        font-size: 1.3rem;
-       
+        border-radius: 6px;
+        font-size: 15px;
       }
     }
     &_erreur {
@@ -57,34 +74,36 @@
       color: #e0245e;
       font-weight: normal;
     }
-    &_button {
+    &_button { 
+      width: 60%;   
       color: #fff;
       font-size: 14px;
       background: #4a9e87;
       font-style: italic;
       border-radius: 10px;
-      margin: 30px 5px;
+      margin: 15px 5px 0 17vw;
       padding: 10px 30px;
       cursor: pointer;
       // opacity: 0.8;
       // float: center;
+
       &:hover {
         background-color: #65d1b3;
         opacity: 2;
       }
       @include media (desktop){
         color: #fff;
-      font-size: 14px;
-      background: #4a9e87;
-      font-style: italic;
-      border-radius: 10px;
-      margin: 30px 180px;
-      padding: 10px 30px;
-      cursor: pointer;
-      &:hover {
-        background-color: #65d1b3;
-        opacity: 2;
-      }
+        font-size: 14px;
+        background: #4a9e87;
+        font-style: italic;
+        border-radius: 10px;
+        margin: 2vh 0 0 9.3vw;
+        padding: 10px 30px;
+        cursor: pointer;
+        &:hover {
+          background-color: #65d1b3;
+          opacity: 2;
+        }
         
       }
     }

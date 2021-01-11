@@ -28,17 +28,17 @@ export default function Onepost() {
         }
       } catch (error) {
         console.log("error",error)
-        // setErrorForm(error);
+        setErrorForm(error);
       }
     };
     fetchData();
-  }, [token]);
+  }, [token, id]);
+
   return (
     <>
     
       <div className="post">
        
-
         <PostDelete post={onePost} />
       </div>
     </>

@@ -17,7 +17,7 @@ export default function PostPatch({ datapost }) {
   let [post, setPost] = useState({
     content: datapost.content,
     like: datapost.like,
-    picture: datapost.picture,
+    hashtag: datapost.hashtag,
     isSubmitting: false,
     errorMessage: null,
   });
@@ -89,12 +89,12 @@ export default function PostPatch({ datapost }) {
         </div>
 
         <div className="container_postPatch_picture">
-          <p><strong>Photos url : </strong> </p>
+          <p><strong> hashtag : </strong> </p>
           <input
             type="text"
-            name="picture"
-            id="picture"
-            value={post.picture}
+            name=" hashtag"
+            id=" hashtag"
+            value={post.hashtag}
             onChange={handleChange}
           ></input>
         </div>

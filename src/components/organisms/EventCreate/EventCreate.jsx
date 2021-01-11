@@ -6,7 +6,6 @@ require("./_eventCreate.scss");
 export default function EventCreate() {
   const history = useHistory();
   const token = localStorage.getItem("token");
-
   const [createEvent, setCreateEvent] = useState({
     title: "",
     content: "",
@@ -14,7 +13,6 @@ export default function EventCreate() {
     isSubmitting: false,
     errorMessage: null,
   });
-
   const handleChange = (event) => {
     setCreateEvent({ ...createEvent, [event.target.name]: event.target.value });
   };

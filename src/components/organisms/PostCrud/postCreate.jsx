@@ -9,7 +9,7 @@ export default function PostCreate() {
 
   const [createPost, setCreatePost] = useState({
     content: null,
-    picture: "",
+    hashtag:"",
     isSubmitting: false,
     errorMessage: null,
   });
@@ -70,14 +70,14 @@ export default function PostCreate() {
           ></textarea>
         </div>
 
-        <div className="container_postCreate_picture">
-          <p>Photos mettre une Url: </p>
+        <div className="container_postCreate_hashtag">
+          <p>Hashtag: </p>
           <input
             type="text"
-            name="picture"
-            id="picture"
-            placeholder="https://example.com"
-            value={createPost.picture}
+            name="hashtag"
+            id="hashtag"
+            placeholder="#hashtag"
+            value={createPost.hashtag}
             onChange={handleChange}
           ></input>
         </div>

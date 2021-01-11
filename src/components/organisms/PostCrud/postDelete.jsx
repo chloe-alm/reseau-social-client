@@ -11,6 +11,7 @@ import imgtrois from "../../../assets/images/trois.png";
 import NavBar from "../../molecules/NavBar";
 import { useAlert } from 'react-alert';
 require("./_postDelete.scss");
+
 export function PostDelete({ post }) {
   const token = localStorage.getItem("token");
   const { state } = useContext(AuthContext);
@@ -19,7 +20,7 @@ export function PostDelete({ post }) {
   const [deletePost, setDeletePost] = useState({
     content: post.content,
     like: post.like,
-    picture: post.picture,
+    hashtag: post.hashtag,
     isSubmitting: false,
     errorMessage: null,
   });
@@ -65,65 +66,67 @@ export function PostDelete({ post }) {
     );
   } else {
     return (
-      <div className="container">
+      <div className="deleteContainer">
         <NavBar/>
-        <h2 className="container_titre">
+        {
+          state.user.id === post.userId ? (
+        <h2 className="deleteContainer_titre">
           Voulez vous modifier/supprimer votre post?{" "}
         </h2>
+        ): (
+        <div></div>)
+        }
+
         
         <form
           method="DELETE"
           action="/posts"
-          className="container_OnePost"
+          className="deleteContainer_OnePost"
           onSubmit={handleSubmit}
         >
           <img
-            className="container_OnePost_image"
+            className="deleteContainer_OnePost_image"
             src={imgtrois}
             alt="trois chevaux"
           />
 
-          <div className="container_OnePost_details">
-            <div className="containerOnePost_details_content">
-              <strong>Le contenu :</strong> {post.content}
+          <div className="deleteContainer_OnePost_details">
+            <div className="deleteContainer_OnePost_details_content">
+            {post.content} 
             </div>
-            <div className="container_OnePost_details_like">
-            <strong>Likes:</strong>  {post.like}
-            </div>
-           
+            <div className="deleteContainer_OnePost_details_bottom">
+              <p className="deleteContainer_OnePost_details_bottom_hashtag"><strong>#{post.hashtag}</strong></p>
+              <p className="deleteContainer_OnePost_details_bottom_like"><strong>Likes:</strong>  {post.like}</p>
+            </div> 
           </div>
 
-          
-          
           {
-            
             state.user.id === post.userId ? (
               <div>
-                <div className="container_OnePost_erreur">
-            {deletePost.errorMessage}
-          </div>
-              <button
-              type="submit"
-              className="container_OnePost_boutonSupprimer"
-              onClick={handleSubmit}
-            >
-              Supprimer
-            </button>
+                <div className="deleteContainer_OnePost_erreur">
+                  {deletePost.errorMessage}
+                </div>
+
+                <button
+                type="submit"
+                className="deleteContainer_OnePost_boutonSupprimer"
+                onClick={handleSubmit}
+                >
+                  Supprimer
+                </button>
     
-          <button
-            type="button"
-            className="container_OnePost_boutonModifier"
-            onClick={redirectModif}
-          >
-            Modifier
-          </button>
-          </div>
+                <button
+                  type="button"
+                  className="deleteContainer_OnePost_boutonModifier"
+                  onClick={redirectModif}
+                >
+                  Modifier
+                </button>
+              </div>
             ):(<div></div>)
-            
             }
           
         </form>
-      
       </div>
         
     );
