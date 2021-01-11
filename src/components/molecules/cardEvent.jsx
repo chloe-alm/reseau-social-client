@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 require("../molecules/_cardEvent.scss");
 
 export default function CardEvent({ event }) {
-  console.log(event);
+  console.log("eventcard",event);
   return (
     <div>
       

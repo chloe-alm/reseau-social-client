@@ -2,12 +2,13 @@ import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CardEvent from "../../molecules/cardEvent";
+import CardEventAdmin from "../../molecules/cardEventAdmin";
 import NavBar from "../../molecules/NavBar";
 import Footer from "../Footer/Footer";
 
-require("../ListEvent/_listEvent.scss");
+// require("../ListEvent/");
 
-export default function ListEvent() {
+export default function ListEventAdmin() {
   const token = localStorage.getItem("token");
   const [listEvent, setListEvent] = useState([]);
   const [errorForm, setErrorForm] = useState(" ");
@@ -42,7 +43,7 @@ export default function ListEvent() {
         {listEvent.map((event,id) => {
           return (
            <div>
-              <CardEvent event={event} key={event.id} />
+              <CardEventAdmin event={event} key={id} />
             </div>
            
           );

@@ -42,7 +42,6 @@ export function PostDelete({ post }) {
       });
       console.log(result);
       if (result.status === 201) {
-        console.log("delete", deletePost);
         return alert.show("Post bien supprimé"),history.push("/posts");
       }
     } catch (error) {
@@ -53,9 +52,6 @@ export function PostDelete({ post }) {
       });
     }
   };
-console.log("POSTLIKE",post.like)
-  console.log("STATE",state.user)
-  console.log("POSTTT",post.userId)
   let [testModifie, setTestModifie] = useState(false);
   const redirectModif = () => {
     setTestModifie(true);

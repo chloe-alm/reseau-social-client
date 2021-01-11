@@ -17,7 +17,8 @@ import { Contact } from "./components/pages/Contact/contact";
 import { Notfound } from "./components/pages/NotFound/notFound";
 import UserPatch from "./components/organisms/UserCrud/userPatch";
 import EventPatch from "./components/organisms/EventPatch/EventPatch";
-import ListEvent from "./components/organisms/ListEvent/listEvent";
+
+import AdminHome from "./components/pages/AdminHome/AdminHome";
 function App() {
   const initialState = {
     isAuthenticated: false,
@@ -86,7 +87,7 @@ function App() {
               <EventPatch />
             </Route>
             <Route exact path="/events">
-              <ListEvent />
+              <AdminHome />
             </Route>
             <Route exact path="/register">
               <Register />
