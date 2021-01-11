@@ -7,7 +7,7 @@ import NavBar from "../../molecules/NavBar";
 import PostCard from "../../molecules/postcard";
 import Footer from "../../organisms/Footer/Footer";
 
-// require("../");
+require("./_userPatch.scss");
 
 
 
@@ -53,10 +53,10 @@ export default function Profil(props) {
 
   return (
     <div className="containerProfil">
-     < NavBar />
+     < NavBar /><br></br><br></br>
       <h2 className="containerProfil_titre">Modification du profil</h2>
 
-      <form method="PATCH" action="/profil" onSubmit={handleSubmit}>
+      <form className="containerProfil_form" method="PATCH" action="/profil" onSubmit={handleSubmit}>
         <p>Prénom :</p>
         <input
           type="text"
@@ -86,7 +86,7 @@ export default function Profil(props) {
         <p>{updateUser.errorMessage}</p>
         <button
           type="button"
-          className="containerProfil_boutonModifier"
+          className="containerProfil_bouton"
           onClick={handleSubmit}
         >
           Envoyer
@@ -108,7 +108,7 @@ export default function Profil(props) {
           );
         })} */}
       </form>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

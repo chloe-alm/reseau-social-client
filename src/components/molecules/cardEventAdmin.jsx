@@ -90,6 +90,7 @@ export default function CardEvent({ event }) {
           <p className="postCardEvent_link_content">
             {event.content}
             <br></br>
+            <br></br>
             
             #{event.hashtag}
             
@@ -99,7 +100,7 @@ export default function CardEvent({ event }) {
       </div>
       {
             
-            state.user.isAdmin === true ? (
+            state.isAdmin === true ? (
               <div>
                 <div className="container_OnePost_erreur">
             {deleteEvent.errorMessage}

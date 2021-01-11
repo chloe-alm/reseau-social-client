@@ -135,7 +135,7 @@ export default function Register(props) {
              
             /> */}
           {/* </div> */}
-          <div className="registerForm_picture">
+          {/* <div className="registerForm_picture">
             <label htmlFor="picture">Photo Url </label>
             <input
               type="text"
@@ -146,7 +146,7 @@ export default function Register(props) {
               onChange={handleChange}
               // required
             />
-          </div>
+          </div> */}
         </div>
       </form>
       <div className="registerForm_erreur">{errorForm}</div>

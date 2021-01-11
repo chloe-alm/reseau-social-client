@@ -5,9 +5,14 @@
     
     width: 100vw;
     padding-top: 2rem;
+
     @include media (desktop){
 
       
+    }
+    p {
+      margin-left: 2rem;
+     
     }
     &_EventCreate {
       

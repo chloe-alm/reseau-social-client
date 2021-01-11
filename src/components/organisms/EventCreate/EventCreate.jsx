@@ -49,6 +49,7 @@ export default function EventCreate() {
 
   return (
     <div className="container">
+      <p><strong>Création d'un évènement par un administrateur :</strong></p>
       <form
         className="container_EventCreate"
         method="POST"
@@ -69,7 +70,7 @@ export default function EventCreate() {
         </div>
 
         <div className="container_EventCreate_content">
-          <p>content :  </p>
+          <p>Le contenu :  </p>
           
             <textarea
           type="text"
@@ -83,7 +84,7 @@ export default function EventCreate() {
         </div>
 
         <div className="container_EventCreate_hashtag">
-          <p>hashtag :  </p>
+          <p>Hashtag :  </p>
           <input
             type="text"
             name="hashtag"
