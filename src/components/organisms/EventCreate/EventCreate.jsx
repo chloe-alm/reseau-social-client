@@ -50,13 +50,13 @@ export default function EventCreate() {
   return (
     <div className="container">
       <form
-        className="container_postCreate"
+        className="container_EventCreate"
         method="POST"
         action="/events"
         onSubmit={handleSubmit}
       >
        
-        <div className="container_postCreate_picture">
+        <div className="container_EventCreate_titre">
           <p>Le titre : </p>
           <input
             type="text"
@@ -68,21 +68,21 @@ export default function EventCreate() {
 
         </div>
 
-        <div className="container_postCreate_content">
+        <div className="container_EventCreate_content">
           <p>content :  </p>
           
             <textarea
           type="text"
             name="content"
             id="content"
-            rows="10"
-            cols="10"
+            // rows="9"
+            // cols="10"
             value={createEvent.content}
             onChange={handleChange}
           ></textarea>
         </div>
 
-        <div className="container_postCreate_picture">
+        <div className="container_EventCreate_hashtag">
           <p>hashtag :  </p>
           <input
             type="text"
@@ -93,11 +93,11 @@ export default function EventCreate() {
           ></input>
         </div>
 
-        <div className="container_postCreate_erreur">{createEvent.errorMessage}</div>
+        <div className="container_eventCreate_erreur">{createEvent.errorMessage}</div>
 
         <button
           type="submit"
-          className="container_postCreate_button"
+          className="container_eventCreate_button"
           onClick={handleSubmit}
         >
           Créer

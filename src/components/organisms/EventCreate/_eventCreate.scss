@@ -1,0 +1,138 @@
+@import "../../../config/mixin";
+
+.container {
+    font-family: "Roboto", sans-serif;
+    
+    width: 100vw;
+    padding-top: 2rem;
+    @include media (desktop){
+
+      
+    }
+    &_EventCreate {
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 50vh;
+      width: 100vw;
+      padding:3%;
+      &_titre{
+         
+          & input {
+            margin: 10px 0px 1rem;
+            height: 5vh;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.3rem;
+           
+          }
+          @include media (desktop){
+            
+       
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50vh;
+           } 
+          
+      }
+      &_content{
+       
+        & textarea {
+            margin: 10px 0px 1rem;
+            height: 5vh;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.3rem;
+           
+          }
+      }
+      &_hashtag{
+       
+        & input {
+            margin: 10px 0px 1rem;
+            height: 5vh;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.3rem;
+           
+          }
+      }
+      &_erreur{
+          color:red;
+      }
+      & button{
+        color: #fff;
+        font-size: 14px;
+        background: #4a9e87;
+        font-style: italic;
+        border-radius: 10px;
+        margin: 30px 5px;
+        padding: 10px 30px;
+        cursor: pointer;
+        // opacity: 0.8;
+        // float: center;
+        &:hover {
+          background-color: #65d1b3;
+          opacity: 2;
+        }
+
+      }
+    }
+
+
+     
+    //   &_picture {
+     
+        
+    //     @include media (desktop){
+    //       width: 100%;
+    //       display: flex;
+    //       flex-direction: column;
+    //       justify-content: center;
+    //       height: 50vh;
+         
+    //     }      
+    
+        
+    //   }
+    //   &_erreur {
+    //     padding-top: 2%;
+    //     color: #e0245e;
+    //     font-weight: normal;
+    //   }
+    //   &_button {
+    //     color: #fff;
+    //     font-size: 14px;
+    //     background: #4a9e87;
+    //     font-style: italic;
+    //     border-radius: 10px;
+    //     margin: 30px 5px;
+    //     padding: 10px 30px;
+    //     cursor: pointer;
+    //     // opacity: 0.8;
+    //     // float: center;
+    //     &:hover {
+    //       background-color: #65d1b3;
+    //       opacity: 2;
+    //     }
+    //     @include media (desktop){
+    //       color: #fff;
+    //     font-size: 14px;
+    //     background: #4a9e87;
+    //     font-style: italic;
+    //     border-radius: 10px;
+    //     margin: 30px 180px;
+    //     padding: 10px 30px;
+    //     cursor: pointer;
+    //     &:hover {
+    //       background-color: #65d1b3;
+    //       opacity: 2;
+    //     }
+          
+    //     }
+    //   }
+    // }
+  }
+  

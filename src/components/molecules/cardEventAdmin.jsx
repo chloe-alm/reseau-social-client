@@ -89,8 +89,8 @@ export default function CardEvent({ event }) {
           <h1 className="postCardEvent_link_title">{event.title}</h1>
           <p className="postCardEvent_link_content">
             {event.content}
-            <br />
-            <br />
+            <br></br>
+            
             #{event.hashtag}
             
             {/* {event.chevaux} */}
